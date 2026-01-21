@@ -1,10 +1,6 @@
 # Quick Start Guide
 
-Get up and running with the FFC Single Page Template in 5 minutes.
-
-> **Using this as a template?** See [TEMPLATE_USAGE.md](./TEMPLATE_USAGE.md) for complete setup instructions including GitHub settings configuration.
-
-> **Quick checklist?** See [TEMPLATE_SETUP_CHECKLIST.md](./TEMPLATE_SETUP_CHECKLIST.md) for a printable checklist of required steps.
+Get up and running with the TechnoMonasteries website in 5 minutes.
 
 ## Prerequisites
 
@@ -17,8 +13,8 @@ Get up and running with the FFC Single Page Template in 5 minutes.
 ### 1. Clone the Repository (30 seconds)
 
 ```bash
-git clone https://github.com/FreeForCharity/FFC_Single_Page_Template.git
-cd FFC_Single_Page_Template
+git clone https://github.com/TechnoMonasteries/technomonasteries.org.git
+cd technomonasteries.org
 ```
 
 ### 2. Install Dependencies (17 seconds)
@@ -37,7 +33,7 @@ npm run dev
 
 **Open**: [http://localhost:3000](http://localhost:3000)
 
-**Expected**: Site loads with FFC homepage
+**Expected**: Site loads with TechnoMonasteries homepage
 
 ### 4. Verify Setup (2 minutes)
 
@@ -50,11 +46,11 @@ npm run lint
 # Run unit tests (3 seconds)
 npm test
 
-# Build for production (20 seconds)
+# Build for production (30 seconds)
 npm run build
 ```
 
-**Expected**: All checks pass with 0 errors (8 warnings about `<img>` tags and React hooks are expected)
+**Expected**: All checks pass with 0 errors
 
 ---
 

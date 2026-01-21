@@ -33,8 +33,7 @@ Our README includes:
 
 - Project description and purpose
 - Quick links to all major documentation
-- Organization information (501(c)(3) nonprofit)
-- CNCF compliance statement
+- Organization information
 - Technical stack overview
 
 #### ✅ LICENSE
@@ -46,7 +45,7 @@ Our README includes:
 Our license:
 
 - Apache 2.0 open source license
-- Copyright by Free For Charity (EIN: 46-2471893)
+- Copyright by TechnoMonasteries
 - Full text of Apache 2.0 terms
 
 #### ✅ CODE_OF_CONDUCT.md
