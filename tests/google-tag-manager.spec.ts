@@ -17,6 +17,9 @@ test.describe('Google Tag Manager Integration', () => {
   test('should initialize dataLayer on page load', async ({ page }) => {
     await page.goto('/')
 
+    // Wait for GTM to load with lazyOnload strategy
+    await page.waitForTimeout(2000)
+
     // Check if dataLayer exists and is initialized
     const hasDataLayer = await page.evaluate(() => {
       return typeof window.dataLayer !== 'undefined' && Array.isArray(window.dataLayer)
@@ -27,6 +30,9 @@ test.describe('Google Tag Manager Integration', () => {
 
   test('should load GTM script with correct ID', async ({ page }) => {
     await page.goto('/')
+
+    // Wait for GTM to load with lazyOnload strategy
+    await page.waitForTimeout(2000)
 
     // Check for GTM script element
     const gtmScript = await page.locator('script[id="gtm-script"]').count()
@@ -51,6 +57,9 @@ test.describe('Google Tag Manager Integration', () => {
   test('should push events to dataLayer', async ({ page }) => {
     await page.goto('/')
 
+    // Wait for GTM to load with lazyOnload strategy
+    await page.waitForTimeout(2000)
+
     // Verify we can push events to dataLayer
     const canPushToDataLayer = await page.evaluate(() => {
       if (typeof window.dataLayer === 'undefined') return false
@@ -65,6 +74,9 @@ test.describe('Google Tag Manager Integration', () => {
 
   test('should load GTM script after page interaction', async ({ page }) => {
     await page.goto('/')
+
+    // Wait for GTM to load with lazyOnload strategy
+    await page.waitForTimeout(2000)
 
     // Verify GTM script exists on the page
     // Note: Next.js Script component with lazyOnload strategy
@@ -116,6 +128,9 @@ test.describe('Google Tag Manager Configuration', () => {
     // The GTM_ID is configured in the component
 
     await page.goto('/')
+
+    // Wait for GTM to load with lazyOnload strategy
+    await page.waitForTimeout(2000)
 
     // GTM script should always be present with the configured ID
     const gtmScript = await page.locator('script[id="gtm-script"]').count()

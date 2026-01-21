@@ -4,6 +4,8 @@ import { testConfig } from './test.config'
 /**
  * Events Section Tests
  *
+ * DISABLED: TechnoMonasteries.org site does not have events section.
+ *
  * These tests verify that:
  * 1. The Events section renders correctly on the homepage
  * 2. The iframe loads with proper sandbox attributes
@@ -14,7 +16,7 @@ import { testConfig } from './test.config'
  * Note: Test expectations use values from test.config.ts for easy customization
  */
 
-test.describe('Events Section', () => {
+test.describe.skip('Events Section - DISABLED (no events on TechnoMonasteries)', () => {
   test('should render the Events section on homepage', async ({ page }) => {
     // Navigate to the homepage
     await page.goto('/')

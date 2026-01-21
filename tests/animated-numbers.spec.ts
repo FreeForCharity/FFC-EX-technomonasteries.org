@@ -4,13 +4,16 @@ import { testConfig } from './test.config'
 /**
  * Animated Numbers Tests
  *
+ * DISABLED: TechnoMonasteries.org site does not have animated numbers.
+ *
  * These tests verify that the Results-2023 section numbers animate correctly
  * when scrolled into view.
  *
  * Note: Test expectations use values from test.config.ts for easy customization
  */
 
-test.describe('Results 2023 Animated Numbers', () => {
+test.describe
+  .skip('Results 2023 Animated Numbers - DISABLED (no animated numbers on TechnoMonasteries)', () => {
   // Helper selector for ResultCard components - uses the distinctive border class
   // to identify the card containing a specific description
   const getResultCard = (page: import('@playwright/test').Page, description: string) =>

@@ -17,8 +17,8 @@ export const testConfig = {
    * Used in: tests/mission-video.spec.ts
    */
   missionVideo: {
-    ariaLabel: 'Free For Charity mission video',
-    title: "Learn about Free For Charity's mission to help nonprofits reduce costs",
+    ariaLabel: 'TechnoMonasteries mission video',
+    title: "Learn about TechnoMonasteries' mission",
   },
 
   /**
@@ -42,8 +42,8 @@ export const testConfig = {
     footerLinkText: 'Events',
     iframeTitle: 'Facebook Events',
     facebookLinkText: 'View all events on Facebook',
-    facebookUrl: 'https://www.facebook.com/freeforcharity',
-    descriptionText: 'volunteer opportunities',
+    facebookUrl: 'https://www.facebook.com/technomonasteries',
+    descriptionText: 'community events',
   },
 
   /**
@@ -51,21 +51,9 @@ export const testConfig = {
    * Used in: tests/social-links.spec.ts
    */
   socialLinks: {
-    facebook: {
-      url: 'facebook.com/freeforcharity',
-      ariaLabel: 'Facebook',
-    },
     twitter: {
-      url: 'x.com/freeforcharity1',
+      url: 'x.com/TechMonasteries',
       ariaLabel: 'X (Twitter)',
-    },
-    linkedin: {
-      url: 'linkedin.com/company/freeforcharity',
-      ariaLabel: 'LinkedIn',
-    },
-    github: {
-      url: 'github.com/FreeForCharity/FFC_Single_Page_Template',
-      ariaLabel: 'GitHub',
     },
   },
 
@@ -74,10 +62,10 @@ export const testConfig = {
    * Used in: tests/copyright.spec.ts
    */
   copyright: {
-    text: 'All Rights Are Reserved by Free For Charity a US 501c3 Non Profit',
+    text: 'All Rights Are Reserved by TechnoMonasteries',
     searchText: 'All Rights Are Reserved',
-    linkUrl: 'https://freeforcharity.org',
-    linkText: 'https://freeforcharity.org',
+    linkUrl: 'https://technomonasteries.org',
+    linkText: 'https://technomonasteries.org',
   },
 
   /**
@@ -110,9 +98,8 @@ export const testConfig = {
    * Used in: tests/logo.spec.ts
    */
   logo: {
-    headerAlt: 'Free For Charity',
-    heroAlt: 'Hero image',
-    navBarAriaLabel: 'Free For Charity home',
+    showcaseAlt: 'Logo',
+    logoPath: '/img/logo.png',
   },
 
   /**

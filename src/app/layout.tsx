@@ -4,36 +4,28 @@ import Header from './../components/header'
 import Footer from './../components/footer'
 import CookieConsent from './../components/cookie-consent'
 import GoogleTagManager, { GoogleTagManagerNoScript } from './../components/google-tag-manager'
-import {
-  openSans,
-  lato,
-  raleway,
-  faustina,
-  cantataOne,
-  faunaOne,
-  montserrat,
-  cinzel,
-} from '@/lib/fonts'
+import { metamorphous, novaFlat } from '@/lib/fonts'
 
 // Get basePath for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ffcworkingsite1.org'),
+  metadataBase: new URL('https://technomonasteries.org'),
   title: {
-    default: 'Free For Charity | Reduce Costs, Increase Impact',
-    template: '%s | Free For Charity',
+    default: 'Techno-Monasteries | A Sanctuary for Open-Source',
+    template: '%s | Techno-Monasteries',
   },
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'Techno-Monasteries are modern sanctuaries for open-source developers, researchers, and creators. Dedicated spaces where builders can focus on deep work, collaborate in person, and contribute to the digital commons.',
   keywords: [
-    'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
+    'open source',
+    'monasteries',
+    'work retreat',
+    'collaboration',
+    'deep work',
+    'developer retreat',
+    'public goods',
+    'open innovation',
   ],
   robots: {
     index: true,
@@ -51,34 +43,31 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://ffcworkingsite1.org/',
-    siteName: 'Free For Charity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
+    url: 'https://technomonasteries.org/',
+    siteName: 'Techno-Monasteries',
+    title: 'Techno-Monasteries | A Sanctuary for Open-Source',
     description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
+      'Modern sanctuaries for open-source developers, researchers, and creators to focus on deep work and collaboration.',
     images: [
       {
-        url: '/web-app-manifest-512x512.png',
-        width: 512,
-        height: 512,
-        alt: 'Free For Charity',
+        url: '/img/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Techno-Monasteries',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@freeforcharity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
+    site: '@TechMonasteries',
+    title: 'Techno-Monasteries | A Sanctuary for Open-Source',
     description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-    images: ['/web-app-manifest-512x512.png'],
+      'Modern sanctuaries for open-source developers, researchers, and creators to focus on deep work and collaboration.',
+    images: ['/img/logo.png'],
   },
   icons: {
-    icon: [
-      { url: `${basePath}/favicon.ico`, sizes: '32x32' },
-      { url: `${basePath}/icon.png`, type: 'image/png', sizes: '32x32' },
-    ],
-    apple: [{ url: `${basePath}/apple-icon.png`, sizes: '180x180', type: 'image/png' }],
+    icon: [{ url: `${basePath}/img/favicon.png`, type: 'image/png', sizes: '32x32' }],
+    apple: [{ url: `${basePath}/img/favicon.png`, sizes: '180x180', type: 'image/png' }],
   },
   manifest: `${basePath}/site.webmanifest`,
 }
@@ -92,46 +81,30 @@ export default function RootLayout({
       <head>
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://ffcsites.org" />
-        <link rel="preconnect" href="https://www.zeffy.com" />
-        <link rel="preconnect" href="https://widgets.guidestar.org" />
+        <link rel="preconnect" href="https://discord.gg" />
+        <link rel="preconnect" href="https://x.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://ffcsites.org" />
-        <link rel="dns-prefetch" href="https://www.zeffy.com" />
-        <link rel="dns-prefetch" href="https://www.idealist.org" />
+        <link rel="dns-prefetch" href="https://discord.gg" />
+        <link rel="dns-prefetch" href="https://x.com" />
 
         {/* Preload critical LCP image */}
-        <link
-          rel="preload"
-          as="image"
-          href={`${basePath}/Images/figma-hero-img.webp`}
-          fetchPriority="high"
-        />
+        <link rel="preload" as="image" href={`${basePath}/img/showcase.png`} fetchPriority="high" />
 
         <GoogleTagManager />
       </head>
       <body
-        className={[
-          'antialiased',
-          openSans.variable,
-          lato.variable,
-          raleway.variable,
-          faustina.variable,
-          cantataOne.variable,
-          faunaOne.variable,
-          montserrat.variable,
-          cinzel.variable,
-        ].join(' ')}
+        className={['antialiased', metamorphous.variable, novaFlat.variable].join(' ')}
         suppressHydrationWarning={true}
       >
         <GoogleTagManagerNoScript />
-        {/* <PopupProvider> */}
-        <Header />
-        {children}
-        <Footer />
-        <CookieConsent />
-        {/* <PopupsRootClient /> */}
-        {/* </PopupProvider> */}
+        <div className="booklet-border">
+          <div className="booklet">
+            <Header />
+            {children}
+            <Footer />
+            <CookieConsent />
+          </div>
+        </div>
       </body>
     </html>
   )

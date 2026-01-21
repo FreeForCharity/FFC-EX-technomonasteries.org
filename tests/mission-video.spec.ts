@@ -4,13 +4,15 @@ import { testConfig } from './test.config'
 /**
  * Mission Video Tests
  *
+ * DISABLED: TechnoMonasteries.org site does not have a mission video.
+ *
  * These tests verify that the mission video is present and properly configured
  * on the homepage mission section.
  *
  * Note: Test expectations use values from test.config.ts for easy customization
  */
 
-test.describe('Mission Video', () => {
+test.describe.skip('Mission Video - DISABLED (no mission video on TechnoMonasteries)', () => {
   test('should display video in mission section', async ({ page }) => {
     // Navigate to the homepage
     await page.goto('/')
