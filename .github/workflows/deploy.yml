@@ -66,7 +66,8 @@ jobs:
         env:
           # Set basePath for GitHub Pages deployment
           # This ensures images and assets work correctly at the subpath
-          NEXT_PUBLIC_BASE_PATH: /technomonasteries.org
+          # Use repository name for default GitHub Pages URL
+          NEXT_PUBLIC_BASE_PATH: /FFC-EX-technomonasteries.org
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v4
