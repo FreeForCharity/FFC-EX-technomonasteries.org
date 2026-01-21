@@ -42,20 +42,20 @@ const ProjectPage: React.FC = () => {
           lead to meaningful breakthroughs.
         </p>
         <p>
-          We&apos;re currently scouting properties that balance affordability, historical
-          character, and the infrastructure needed to support a small group of open-source
-          developers and researchers. This space will serve as a prototype for a global network of
-          spaces designed to sustain open-source development and public goods. Can we build a
-          sustainable model that attracts talent, fosters collaboration, and accelerates important
-          work? The lessons we learn here will shape the future of Techno-Monasteries.
+          We&apos;re currently scouting properties that balance affordability, historical character,
+          and the infrastructure needed to support a small group of open-source developers and
+          researchers. This space will serve as a prototype for a global network of spaces designed
+          to sustain open-source development and public goods. Can we build a sustainable model that
+          attracts talent, fosters collaboration, and accelerates important work? The lessons we
+          learn here will shape the future of Techno-Monasteries.
         </p>
         <div className="pageSectionTitle">Blueprint for Impact</div>
         <p>
           But this is just the beginning. Our goal is to create a model that can be replicated,
           adapted, and expanded across the world. By documenting our successes and challenges,
           refining governance and funding strategies, and testing sustainable operational models, we
-          will provide a clear roadmap for future initiatives. Techno-Monasteries will not just be
-          a home for open-source innovation—they will be a blueprint for the future of sustainable
+          will provide a clear roadmap for future initiatives. Techno-Monasteries will not just be a
+          home for open-source innovation—they will be a blueprint for the future of sustainable
           public goods.
         </p>
 
@@ -64,10 +64,9 @@ const ProjectPage: React.FC = () => {
         <br />
         <div className="pageSectionTitle">From Empty Halls to Innovation Hubs</div>
         <p>
-          For the price of a three-bedroom in San Francisco, we&apos;ve found historic properties
-          in Europe—spacious, full of character, and ready to be transformed. Here are a few that
-          could become the first Techno-Monastery. Each offers unique potential—what would you
-          build here?
+          For the price of a three-bedroom in San Francisco, we&apos;ve found historic properties in
+          Europe—spacious, full of character, and ready to be transformed. Here are a few that could
+          become the first Techno-Monastery. Each offers unique potential—what would you build here?
         </p>
 
         <div className="carousel"></div>
