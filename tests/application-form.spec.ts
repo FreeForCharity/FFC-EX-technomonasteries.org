@@ -4,6 +4,8 @@ import { testConfig } from './test.config'
 /**
  * Application Form Button Tests
  *
+ * DISABLED: TechnoMonasteries.org site does not have application forms.
+ *
  * These tests verify the ApplicationFormButton modal functionality:
  * 1. Modal opens and closes correctly
  * 2. Microsoft Forms iframe loads with proper sandbox attributes
@@ -16,7 +18,7 @@ import { testConfig } from './test.config'
  * Note: Test expectations use values from test.config.ts for easy customization
  */
 
-test.describe('Application Form Button', () => {
+test.describe.skip('Application Form Button - DISABLED (no forms on TechnoMonasteries)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
     // Wait for page to be loaded
@@ -245,7 +247,8 @@ test.describe('Application Form Button', () => {
   })
 })
 
-test.describe('Application Form Iframe Loading', () => {
+test.describe
+  .skip('Application Form Iframe Loading - DISABLED (no forms on TechnoMonasteries)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
     await page.waitForLoadState('domcontentloaded')

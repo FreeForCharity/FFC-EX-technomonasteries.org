@@ -51,21 +51,9 @@ export const testConfig = {
    * Used in: tests/social-links.spec.ts
    */
   socialLinks: {
-    facebook: {
-      url: 'facebook.com/freeforcharity',
-      ariaLabel: 'Facebook',
-    },
     twitter: {
-      url: 'x.com/freeforcharity1',
+      url: 'x.com/TechMonasteries',
       ariaLabel: 'X (Twitter)',
-    },
-    linkedin: {
-      url: 'linkedin.com/company/freeforcharity',
-      ariaLabel: 'LinkedIn',
-    },
-    github: {
-      url: 'github.com/FreeForCharity/FFC_Single_Page_Template',
-      ariaLabel: 'GitHub',
     },
   },
 
@@ -110,9 +98,8 @@ export const testConfig = {
    * Used in: tests/logo.spec.ts
    */
   logo: {
-    headerAlt: 'Free For Charity',
-    heroAlt: 'Hero image',
-    navBarAriaLabel: 'Free For Charity home',
+    showcaseAlt: 'Logo',
+    logoPath: '/img/logo.png',
   },
 
   /**

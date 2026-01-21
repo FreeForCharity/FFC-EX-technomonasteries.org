@@ -27,40 +27,20 @@ jest.mock('framer-motion', () => ({
 describe('Header component', () => {
   it('should render the header', () => {
     render(<Header />)
-    expect(screen.getByRole('banner')).toBeInTheDocument()
+    // Check for the header div element
+    expect(screen.getByText(/TECHNO MONASTERIES/i)).toBeInTheDocument()
   })
 
-  it('should display the Free For Charity logo', () => {
+  it('should display the site title', () => {
     render(<Header />)
-    // Check for logo image with alt text
-    expect(screen.getByAltText('Free For Charity')).toBeInTheDocument()
+    // Check for the main title "TECHNO MONASTERIES"
+    expect(screen.getByText(/TECHNO MONASTERIES/i)).toBeInTheDocument()
   })
 
-  it('should display Home navigation link', () => {
+  it('should display the tagline', () => {
     render(<Header />)
-    // Home link should always be present in navigation
-    expect(screen.getByText('Home')).toBeInTheDocument()
-  })
-
-  it('should have navigation links', () => {
-    render(<Header />)
-    // Check that navigation has at least some links
-    const links = screen.getAllByRole('link')
-    expect(links.length).toBeGreaterThan(0)
-  })
-
-  it('should have a mobile menu button', () => {
-    render(<Header />)
-    // Look for the menu icon button
-    const buttons = screen.getAllByRole('button')
-    expect(buttons.length).toBeGreaterThan(0)
-  })
-
-  it('should have search functionality button', () => {
-    render(<Header />)
-    const buttons = screen.getAllByRole('button')
-    // Should have at least menu and search buttons
-    expect(buttons.length).toBeGreaterThanOrEqual(2)
+    // Check for tagline text
+    expect(screen.getByText(/A Sanctuary for Open-Source/i)).toBeInTheDocument()
   })
 
   it('should not have accessibility violations', async () => {

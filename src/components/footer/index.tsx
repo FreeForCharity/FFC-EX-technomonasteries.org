@@ -49,6 +49,7 @@ const Footer: React.FC = () => {
               className="circleBtn"
               href="https://x.com/TechMonasteries"
               role="button"
+              aria-label="X (Twitter)"
               style={{ textDecoration: 'none' }}
               target="_blank"
               rel="noopener noreferrer"

@@ -13,46 +13,39 @@ describe('Footer component', () => {
     expect(footer).toBeInTheDocument()
   })
 
-  it('should display Endorsements section', () => {
+  it('should have navigation links', () => {
     render(<Footer />)
-    expect(screen.getByText('Endorsements')).toBeInTheDocument()
-  })
-
-  it('should display Quick Links section', () => {
-    render(<Footer />)
-    expect(screen.getByText('Quick Links')).toBeInTheDocument()
-  })
-
-  it('should display Contact Us section with contact information', () => {
-    render(<Footer />)
-    expect(screen.getByText('Contact Us')).toBeInTheDocument()
-  })
-
-  it('should have social media links', () => {
-    render(<Footer />)
-    // Check for social media links by their aria-labels or visible text
+    // Check for navigation links
     const links = screen.getAllByRole('link')
     expect(links.length).toBeGreaterThan(0)
   })
 
-  it('should display the current year in copyright', () => {
+  it('should display Home link', () => {
     render(<Footer />)
-    const currentYear = new Date().getFullYear()
-    expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
   })
 
-  it('should have GuideStar profile link', () => {
+  it('should display Project link', () => {
     render(<Footer />)
-    const guidestarLink = screen.getByText(/GuideStar Profile/i)
-    expect(guidestarLink).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Project' })).toBeInTheDocument()
   })
 
-  it('should have email contact link', () => {
+  it('should display FAQ link', () => {
     render(<Footer />)
-    // Look for email link
-    const links = screen.getAllByRole('link')
-    const emailLink = links.find((link) => link.getAttribute('href')?.includes('mailto:'))
-    expect(emailLink).toBeDefined()
+    expect(screen.getByRole('link', { name: 'FAQ' })).toBeInTheDocument()
+  })
+
+  it('should display About link', () => {
+    render(<Footer />)
+    expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument()
+  })
+
+  it('should have X (Twitter) social media link', () => {
+    render(<Footer />)
+    // Check for X/Twitter link by aria-label
+    const twitterLink = screen.getByRole('button', { name: 'X (Twitter)' })
+    expect(twitterLink).toBeInTheDocument()
+    expect(twitterLink.getAttribute('href')).toContain('x.com/TechMonasteries')
   })
 
   it('should not have accessibility violations', async () => {

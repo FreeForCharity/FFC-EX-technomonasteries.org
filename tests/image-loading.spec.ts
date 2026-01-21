@@ -5,12 +5,10 @@ import { testConfig } from './test.config'
  * Image Loading Tests
  *
  * These tests verify that images load correctly when the site is built.
- * The tests check that images in the header and hero section are visible
+ * The tests check that images in the showcase section are visible
  * and load properly with successful HTTP responses.
  *
- * Note: The hero image is a local asset (/Images/figma-hero-img.png) that
- * should load correctly in all deployment scenarios including GitHub Pages.
- * Test expectations use values from test.config.ts for easy customization.
+ * Note: Test expectations use values from test.config.ts for easy customization.
  */
 
 test.describe('Image Loading', () => {
@@ -18,29 +16,29 @@ test.describe('Image Loading', () => {
     // Navigate to the homepage
     await page.goto('/')
 
-    // Find the logo images
-    const headerLogo = page.locator(`header a[href="/"] img[alt="${testConfig.logo.headerAlt}"]`)
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
+    // Find the logo and showcase images
+    const showcaseLogo = page.locator(`img[alt="${testConfig.logo.showcaseAlt}"]`)
+    const showcaseImage = page.locator('img[alt="Showcase"]')
 
     // Verify both images are visible (meaning they loaded successfully)
-    await expect(headerLogo).toBeVisible()
-    await expect(heroImage).toBeVisible()
+    await expect(showcaseLogo).toBeVisible()
+    await expect(showcaseImage).toBeVisible()
 
-    // Verify the header logo has a src attribute
-    const headerSrc = await headerLogo.getAttribute('src')
-    expect(headerSrc).toBeTruthy()
+    // Verify the logo has a src attribute
+    const logoSrc = await showcaseLogo.getAttribute('src')
+    expect(logoSrc).toBeTruthy()
 
-    // Verify the hero image has a src attribute
-    const heroSrc = await heroImage.getAttribute('src')
-    expect(heroSrc).toBeTruthy()
+    // Verify the showcase image has a src attribute
+    const showcaseSrc = await showcaseImage.getAttribute('src')
+    expect(showcaseSrc).toBeTruthy()
   })
 
-  test('hero image should load from local assets', async ({ page }) => {
+  test('showcase image should load from local assets', async ({ page }) => {
     // Listen for image requests
     const imageRequests: Array<{ url: string; status: number }> = []
 
     page.on('response', (response) => {
-      if (response.url().includes('figma-hero-img')) {
+      if (response.url().includes('showcase.png')) {
         imageRequests.push({
           url: response.url(),
           status: response.status(),
@@ -51,11 +49,11 @@ test.describe('Image Loading', () => {
     // Navigate to the homepage
     await page.goto('/')
 
-    // Wait for hero image to be visible
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
-    await expect(heroImage).toBeVisible()
+    // Wait for showcase image to be visible
+    const showcaseImage = page.locator('img[alt="Showcase"]')
+    await expect(showcaseImage).toBeVisible()
 
-    // Verify at least one image request was made for the hero image
+    // Verify at least one image request was made for the showcase image
     expect(imageRequests.length).toBeGreaterThan(0)
 
     // Verify all image requests returned 200 OK
@@ -71,15 +69,15 @@ test.describe('Image Loading', () => {
     // Navigate to the homepage
     await page.goto('/')
 
-    // Find the hero image
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
+    // Find the showcase image
+    const showcaseImage = page.locator('img[alt="Showcase"]')
 
     // Wait for the image to be visible
-    await expect(heroImage).toBeVisible()
+    await expect(showcaseImage).toBeVisible()
 
     // Verify the image has loaded by checking it has natural dimensions
-    const naturalWidth = await heroImage.evaluate((img: HTMLImageElement) => img.naturalWidth)
-    const naturalHeight = await heroImage.evaluate((img: HTMLImageElement) => img.naturalHeight)
+    const naturalWidth = await showcaseImage.evaluate((img: HTMLImageElement) => img.naturalWidth)
+    const naturalHeight = await showcaseImage.evaluate((img: HTMLImageElement) => img.naturalHeight)
 
     // The image should have dimensions greater than 0 if loaded correctly
     expect(naturalWidth).toBeGreaterThan(0)
