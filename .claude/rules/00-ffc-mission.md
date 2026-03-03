@@ -1,8 +1,8 @@
-# Free For Charity Global Rules
+# TechnoMonasteries Repository Rules
 
 ## Mission
 
-Free For Charity (FFC) provides free websites and domain management for 501(c)(3) nonprofit organizations. Every repo in this org supports that mission.
+TechnoMonasteries.org is a static Next.js website exploring the intersection of technology, spirituality, and community, configured for static export and deployment to GitHub Pages.
 
 ## Commit Messages
 

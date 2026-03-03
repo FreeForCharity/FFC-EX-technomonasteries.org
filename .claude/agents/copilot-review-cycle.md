@@ -163,7 +163,7 @@ When done, output a markdown summary:
   whether the LATEST review generated NEW comments.
 - **Duplicate file warnings** from renames are not actionable. Note them in the
   summary but do not try to fix them.
-- **Run `pnpm run format` before committing** to avoid formatting-only comments
+- **Run `npm run format` before committing** to avoid formatting-only comments
   on the next round.
 - If a Copilot comment is unclear or contradicts a previous fix, use your best
   judgment and note it in the summary.

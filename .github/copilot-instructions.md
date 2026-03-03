@@ -1,6 +1,6 @@
-# Copilot Instructions: FFC-EX-technomonasteries.org
+# Copilot Instructions: technomonasteries.org
 
-Free For Charity nonprofit website for technomonasteries.org. Next.js static site on GitHub Pages.
+TechnoMonasteries.org — a Next.js static website exploring the intersection of technology, spirituality, and community. Next.js static site on GitHub Pages.
 
 ## Workflow
 
@@ -20,7 +20,7 @@ Issue -> branch -> PR -> merge queue. No direct commits to main.
 - **Output:** Static export (`output: 'export'` in next.config.ts)
 - **Pages:** `src/app/` (App Router conventions)
 - **Components:** `src/components/`
-- **Content:** `src/data/` (.ts modules and JSON data files)
+- **Content:** Static page content lives in route files under `src/app/` and presentational components in `src/components/`
 - **Utilities:** `src/lib/`
 
 ## Conventions
