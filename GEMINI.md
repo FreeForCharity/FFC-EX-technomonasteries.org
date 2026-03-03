@@ -109,7 +109,7 @@ Most text content lives in component files under `src/components/` and route fil
 
 ## Asset Path Helper
 
-The site deploys to `https://freeforcharity.github.io/technomonasteries.org/` (and your custom domain if configured). The `assetPath()` function from `src/lib/assetPath.ts` handles this automatically.
+The site deploys to `https://technomonasteries.github.io/technomonasteries.org/` (and your custom domain if configured). The `assetPath()` function from `src/lib/assetPath.ts` handles this automatically.
 
 ```tsx
 // Always use assetPath() for images and static assets

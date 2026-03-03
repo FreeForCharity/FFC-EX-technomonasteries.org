@@ -88,7 +88,7 @@ Component files use PascalCase: `HeroSection.tsx`, `DonateButton.tsx`.
 
 ## GitHub Pages & Asset Paths
 
-These sites deploy to `https://freeforcharity.github.io/technomonasteries.org/` and optionally to a custom domain if one is configured for this repo.
+This site deploys to `https://technomonasteries.github.io/technomonasteries.org/` and optionally to a custom domain if one is configured for this repo.
 
 **Always use the `assetPath()` helper** from `src/lib/assetPath.ts` for image and asset references:
 
