@@ -48,7 +48,7 @@ src/
   app/            --> Pages, routes, and static content (App Router)
   components/     --> Reusable UI components
   lib/            --> Utilities (including assetPath helper)
-public/           --> Static assets (images, icons, favicons)
+public/           --> Static assets (Images/, Svgs/, img/, videos/, favicons)
 ```
 
 **Route folders use kebab-case.** This is required for SEO. Use `about-us/`, not `aboutUs/`.

@@ -65,7 +65,7 @@ src/
   components/           # Reusable UI components
   lib/                  # Utility functions and helpers
     assetPath.ts        # GitHub Pages asset path helper
-public/                 # Static assets (images, icons, favicons)
+public/                 # Static assets (Images/, Svgs/, img/, videos/, favicons)
 next.config.ts          # Next.js configuration
 tsconfig.json           # TypeScript configuration
 ```
