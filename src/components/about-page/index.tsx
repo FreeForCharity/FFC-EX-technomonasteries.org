@@ -6,10 +6,12 @@ import { assetPath } from '@/lib/assetPath'
 const AboutPage: React.FC = () => {
   return (
     <div>
-      <div
-        className="showcase"
-        style={{ backgroundImage: `url(${assetPath('/img/workSpace.png')})` }}
-      >
+      <div className="showcase">
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/workSpace.png')}
+          alt="TechnoMonasteries workspace"
+        />
         <div className="overlay">
           <h1>About TechnoMonasteries</h1>
         </div>
@@ -20,10 +22,8 @@ const AboutPage: React.FC = () => {
           <div className="left-column">
             {/* Our Mission */}
             <section className="about-section">
-              <h2>
-                <img src={assetPath('/img/O.png')} alt="O" className="illuminated-letter" />
-                ur Mission
-              </h2>
+              <img src={assetPath('/img/O.png')} alt="" className="illuminated-letter" />
+              <h2 aria-label="Our Mission">ur Mission</h2>
               <p>
                 TechnoMonasteries is dedicated to creating spaces where technology, community, and
                 creativity intersect. Inspired by the historical role of monasteries as centers of
@@ -40,10 +40,8 @@ const AboutPage: React.FC = () => {
 
             {/* Why It Matters */}
             <section className="about-section">
-              <h2>
-                <img src={assetPath('/img/W.png')} alt="W" className="illuminated-letter" />
-                hy It Matters
-              </h2>
+              <img src={assetPath('/img/W.png')} alt="" className="illuminated-letter" />
+              <h2 aria-label="Why It Matters">hy It Matters</h2>
               <ul className="calligraphy-list">
                 <li>
                   <strong>Democratizing Access:</strong> Technology and education should be
@@ -100,10 +98,8 @@ const AboutPage: React.FC = () => {
           <div className="right-column">
             {/* Who We Are */}
             <section className="about-section">
-              <h2>
-                <img src={assetPath('/img/W.png')} alt="W" className="illuminated-letter" />
-                ho We Are
-              </h2>
+              <img src={assetPath('/img/W.png')} alt="" className="illuminated-letter" />
+              <h2 aria-label="Who We Are">ho We Are</h2>
               <p>
                 TechnoMonasteries is founded and maintained by a diverse group of technologists,
                 educators, and community organizers who share a vision of accessible, collaborative
@@ -133,10 +129,8 @@ const AboutPage: React.FC = () => {
 
             {/* Contact */}
             <section className="about-section">
-              <h2>
-                <img src={assetPath('/img/C.png')} alt="C" className="illuminated-letter" />
-                ontact
-              </h2>
+              <img src={assetPath('/img/C.png')} alt="" className="illuminated-letter" />
+              <h2 aria-label="Contact">ontact</h2>
               <p>Have questions or want to learn more? Reach out to us:</p>
               <p className="contact-info">
                 <strong>Email:</strong>{' '}
@@ -146,10 +140,8 @@ const AboutPage: React.FC = () => {
 
             {/* Get Involved */}
             <section className="about-section">
-              <h2>
-                <img src={assetPath('/img/G.jpg')} alt="G" className="illuminated-letter" />
-                et Involved
-              </h2>
+              <img src={assetPath('/img/G.jpg')} alt="" className="illuminated-letter" />
+              <h2 aria-label="Get Involved">et Involved</h2>
               <p>
                 Join our growing community and help shape the future of TechnoMonasteries. Connect
                 with us on Discord to participate in discussions, find collaboration opportunities,
