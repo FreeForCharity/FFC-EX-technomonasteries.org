@@ -63,7 +63,7 @@ src/
   app/                  # Next.js App Router -- pages and layouts
     page.tsx            # Home page
     layout.tsx          # Root layout
-    [route]/page.tsx    # Additional routes (e.g., privacy-policy/)
+    <route>/page.tsx    # Additional routes (e.g., privacy-policy/page.tsx)
   components/           # Reusable UI components
   lib/                  # Utility functions and helpers
     assetPath.ts        # GitHub Pages asset path helper
