@@ -19,7 +19,7 @@ const FAQPage: React.FC = () => {
           src={assetPath('/img/building.jpg')}
           alt="TechnoMonasteries building"
         />
-        <div className="overlay">
+        <div className="showcase-overlay">
           <h1>Frequently Asked Questions</h1>
         </div>
       </div>

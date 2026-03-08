@@ -304,7 +304,7 @@ body {
 }
 
 /* Showcase overlay */
-.overlay {
+.showcase-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -316,7 +316,7 @@ body {
   justify-content: center;
 }
 
-.overlay h1 {
+.showcase-overlay h1 {
   color: white;
   font-family: var(--font-metamorphous), serif;
   font-size: 4rem;
@@ -432,7 +432,7 @@ body {
   .illuminated-letter {
     width: 60px;
   }
-  .overlay h1 {
+  .showcase-overlay h1 {
     font-size: 3rem;
   }
 }
