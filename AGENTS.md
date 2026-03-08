@@ -2,7 +2,9 @@
 
 **Project:** technomonasteries.org — a static Next.js website exploring the intersection of technology, spirituality, and community
 
-**Organization:** TechnoMonasteries.org is an independent project and is **not** affiliated with Free For Charity.
+**Organization:** TechnoMonasteries.org is an independent project. Free For Charity (FFC) provides technical support and core technology but this is not a direct FFC project.
+
+_Note: Some existing repository documentation (for example, CONTRIBUTING.md and older issue templates) may still contain legacy references to "Free For Charity." These are historical artifacts pending rebranding._
 
 ---
 
