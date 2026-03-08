@@ -1,6 +1,6 @@
 # Copilot Instructions: technomonasteries.org
 
-TechnoMonasteries.org — a Next.js static website exploring the intersection of technology, spirituality, and community. Next.js static site on GitHub Pages.
+TechnoMonasteries.org — a Next.js static website exploring the intersection of technology, spirituality, and community. Deployed via GitHub Pages.
 
 ## Workflow
 
