@@ -1,8 +1,10 @@
-# AI Agent Instructions: FFC-EX-technomonasteries.org
+# AI Agent Instructions: technomonasteries.org
 
-**Project:** FFC-EX-technomonasteries.org -- a Free For Charity nonprofit website for technomonasteries.org
+**Project:** technomonasteries.org — a static Next.js website exploring the intersection of technology, spirituality, and community
 
-**Organization:** [Free For Charity](https://freeforcharity.org) provides free, professionally built websites for 501(c)(3) nonprofit organizations. Every repo in this organization serves that mission.
+**Organization:** TechnoMonasteries.org is an independent project. Free For Charity (FFC) provides technical support and core technology but this is not a direct FFC project.
+
+_Note: Some existing repository documentation (for example, CONTRIBUTING.md and older issue templates) may still contain legacy references to "Free For Charity." These are historical artifacts pending rebranding._
 
 ---
 
@@ -61,12 +63,11 @@ src/
   app/                  # Next.js App Router -- pages and layouts
     page.tsx            # Home page
     layout.tsx          # Root layout
-    [route]/page.tsx     # Additional routes (e.g., privacy-policy/)
+    <route>/page.tsx    # Additional routes (e.g., privacy-policy/page.tsx)
   components/           # Reusable UI components
-  data/                 # Content modules (.ts) and JSON data files
   lib/                  # Utility functions and helpers
     assetPath.ts        # GitHub Pages asset path helper
-public/                 # Static assets (Images/, Svgs/, fonts, favicons)
+public/                 # Static assets (Images/, Svgs/, img/, videos/, favicons)
 next.config.ts          # Next.js configuration
 tsconfig.json           # TypeScript configuration
 ```
@@ -89,7 +90,7 @@ Component files use PascalCase: `HeroSection.tsx`, `DonateButton.tsx`.
 
 ## GitHub Pages & Asset Paths
 
-These sites deploy to `https://freeforcharity.github.io/FFC-EX-technomonasteries.org/` and optionally to a custom domain if one is configured for this repo.
+This site deploys to `https://technomonasteries.github.io/technomonasteries.org/` and optionally to a custom domain if one is configured for this repo.
 
 **Always use the `assetPath()` helper** from `src/lib/assetPath.ts` for image and asset references:
 

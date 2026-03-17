@@ -1,8 +1,8 @@
-# Claude Code Instructions: FFC-EX-technomonasteries.org
+# Claude Code Instructions: TechnoMonasteries.org Static Site
 
-Welcome, Claude! This document provides specific instructions for working on FFC-EX-technomonasteries.org.
+Welcome, Claude! This document provides specific instructions for working on the TechnoMonasteries.org Static Site.
 
-**Project:** FFC-EX-technomonasteries.org -- a Free For Charity nonprofit website for technomonasteries.org
+**Project:** TechnoMonasteries.org Static Site — a Next.js static website exploring the intersection of spirituality, technology, and community
 
 See **AGENTS.md** for the full project reference including architecture, commands, conventions, and security rules. This file covers what is different or specific to your capabilities as Claude Code.
 
@@ -67,12 +67,9 @@ Check your available tools at the start of each session. If an MCP server is ava
 
 Check `.claude/agents/` for custom agent definitions. Common agents include:
 
-| Agent         | Purpose                               |
-| ------------- | ------------------------------------- |
-| `dns-audit`   | Audit DNS records for correctness     |
-| `site-health` | Check site availability, SSL, headers |
-| `pr-reviewer` | Automated PR review checklist         |
-| `onboarding`  | New repo setup and configuration      |
+| Agent                  | Purpose                                       |
+| ---------------------- | --------------------------------------------- |
+| `copilot-review-cycle` | Guide Copilot through iterative review cycles |
 
 Invoke these when the task matches their purpose. If no matching agent exists, proceed with your general capabilities.
 

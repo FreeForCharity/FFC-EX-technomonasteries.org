@@ -1,10 +1,10 @@
-# Gemini Instructions: FFC-EX-technomonasteries.org
+# Gemini Instructions: technomonasteries.org
 
-Hey Gemini! Welcome to FFC-EX-technomonasteries.org.
+Hey Gemini! Welcome to the TechnoMonasteries.org web project.
 
-**Project:** FFC-EX-technomonasteries.org -- a Free For Charity nonprofit website for technomonasteries.org
+**Project:** TechnoMonasteries.org — a Next.js static website exploring the intersection of technology, spirituality, and community
 
-Free For Charity provides free, professionally built websites for 501(c)(3) nonprofit organizations. This repo is one of ~25 charity sites in the FFC family.
+This repository contains the source for the TechnoMonasteries.org site. It is not part of any Free For Charity program or family of charity sites.
 
 See **AGENTS.md** for the complete project reference. This file gives you the practical shortcuts you need to be productive fast.
 
@@ -45,11 +45,10 @@ npm run test:e2e     # Run Playwright E2E tests
 
 ```
 src/
-  app/            --> Pages and routes (App Router)
+  app/            --> Pages, routes, and static content (App Router)
   components/     --> Reusable UI components
-  data/           --> Content modules (.ts) and JSON data files
   lib/            --> Utilities (including assetPath helper)
-public/           --> Static assets (Images/, Svgs/, fonts)
+public/           --> Static assets (Images/, Svgs/, img/, videos/, favicons)
 ```
 
 **Route folders use kebab-case.** This is required for SEO. Use `about-us/`, not `aboutUs/`.
@@ -83,9 +82,9 @@ public/           --> Static assets (Images/, Svgs/, fonts)
 
 ### Updating Site Content
 
-Most text content lives in `src/data/` as `.ts` modules or `.json` files in subdirectories. To update:
+Most text content lives in component files under `src/components/` and route files under `src/app/`. To update:
 
-1. Find the relevant file in `src/data/`
+1. Find the relevant component or page file
 2. Edit the text values (keep the data structure intact)
 3. Run `npm run build` to verify nothing breaks
 
@@ -110,7 +109,7 @@ Most text content lives in `src/data/` as `.ts` modules or `.json` files in subd
 
 ## Asset Path Helper
 
-The site deploys to `https://freeforcharity.github.io/FFC-EX-technomonasteries.org/` (and your custom domain if configured). The `assetPath()` function from `src/lib/assetPath.ts` handles this automatically.
+The site deploys to `https://technomonasteries.github.io/technomonasteries.org/` (and your custom domain if configured). The `assetPath()` function from `src/lib/assetPath.ts` handles this automatically.
 
 ```tsx
 // Always use assetPath() for images and static assets
@@ -142,7 +141,7 @@ Google Fonts require network access. On restricted networks, the site falls back
 
 ### Tests fail after content changes
 
-If you changed text in `src/data/`, some snapshot tests or text-matching tests may need updating. Check the test failure output and update expected values to match your changes.
+If you changed text in component files under `src/components/` or page files under `src/app/`, some snapshot tests or text-matching tests may need updating. Check the test failure output and update expected values to match your changes.
 
 ### `npm run build` hangs or times out
 
