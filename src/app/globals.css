@@ -303,12 +303,12 @@ body {
   margin-top: 15px;
 }
 
-/* Showcase overlay */
+/* Showcase overlay — matches .showcaseImg width (90%) and horizontal centering */
 .showcase-overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 5%;
+  width: 90%;
   height: 100%;
   background: rgba(0, 0, 0, 0.45);
   display: flex;
