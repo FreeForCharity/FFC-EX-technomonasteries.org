@@ -1,6 +1,6 @@
 # TechnoMonasteries.org Static Site
 
-Modern static website built with Next.js 16.0.7 for TechnoMonasteries.org - exploring the intersection of spirituality, technology, and community.
+Modern static website built with Next.js 16.1.7 for TechnoMonasteries.org - exploring the intersection of spirituality, technology, and community.
 
 ## Quick Links
 
@@ -48,7 +48,7 @@ The site consists of 4 main pages plus legal/policy pages:
 
 ## Tech Stack
 
-- **Framework**: Next.js 16.0.7 (App Router, TypeScript)
+- **Framework**: Next.js 16.1.7 (App Router, TypeScript)
 - **Styling**: Tailwind CSS with utility-first classes
 - **Fonts**: Google Fonts (Faustina, Fauna One, Lato, Inter)
 - **Deployment**: Static export to GitHub Pages

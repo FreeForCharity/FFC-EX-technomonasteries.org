@@ -11,7 +11,7 @@ The Free For Charity website is a static Next.js application deployed to GitHub 
 ### Components
 
 1. **Frontend Application**
-   - Next.js 16.0.7 (App Router)
+   - Next.js 16.1.7 (App Router)
    - TypeScript, React 19.2.0
    - Static site generation (`output: "export"`)
    - Client-side JavaScript
