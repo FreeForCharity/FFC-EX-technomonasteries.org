@@ -13,11 +13,13 @@ const FAQPage: React.FC = () => {
 
   return (
     <div>
-      <div
-        className="showcase"
-        style={{ backgroundImage: `url(${assetPath('/img/building.jpg')})` }}
-      >
-        <div className="overlay">
+      <div className="showcase">
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/building.jpg')}
+          alt="TechnoMonasteries building"
+        />
+        <div className="showcase-overlay">
           <h1>Frequently Asked Questions</h1>
         </div>
       </div>
