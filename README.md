@@ -50,7 +50,7 @@ The site consists of 4 main pages plus legal/policy pages:
 
 - **Framework**: Next.js 16.1.7 (App Router, TypeScript)
 - **Styling**: Tailwind CSS with utility-first classes
-- **Fonts**: Google Fonts (Faustina, Fauna One, Lato, Inter)
+- **Fonts**: Optimized web fonts loaded via Next.js font support
 - **Deployment**: Static export to GitHub Pages
 - **Testing**: Jest + Playwright + jest-axe
 - **CI/CD**: GitHub Actions

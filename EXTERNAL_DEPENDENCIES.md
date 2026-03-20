@@ -161,7 +161,7 @@ These dependencies are used during development and build processes but are not i
 - **Next.js** (v16.1.7) - React framework
 - **TypeScript** (v5) - Type safety
 - **Tailwind CSS** (v4.1.12) - Styling framework
-- **PostCSS** (v8.5.6) - CSS processing
+- **PostCSS** (v8.5.8) - CSS processing
 
 ### Testing & Quality
 
