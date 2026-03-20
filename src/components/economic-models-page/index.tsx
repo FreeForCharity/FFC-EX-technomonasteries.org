@@ -17,7 +17,7 @@ const EconomicModelsPage: React.FC = () => {
       </div>
 
       <div className="mainContent">
-        <h1 className="pageTitle">Economic Models for Techno-Monasteries</h1>
+        <h2 className="pageTitle">Economic Models for Techno-Monasteries</h2>
 
         <p>
           A Techno-Monastery is more than an idea—it must be financially sustainable over
