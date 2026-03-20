@@ -445,6 +445,128 @@ body {
   }
 }
 
+/* Economic models page styles */
+.model-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.model-card {
+  background-color: var(--parchment-d);
+  border: 2px solid var(--brown);
+  padding: 24px;
+  text-shadow: none;
+}
+
+.model-card h2 {
+  font-family: var(--font-nova-flat), 'Nova Flat', sans-serif;
+  font-size: 2.6rem;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+}
+
+.model-card p {
+  text-indent: 0 !important;
+  margin-top: 8px !important;
+}
+
+.model-card-footer {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.economic-section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.economic-section h2 {
+  font-family: var(--font-nova-flat), 'Nova Flat', sans-serif;
+  font-size: 2.6rem;
+  color: var(--charcoal);
+  border-bottom: 2px solid var(--brown);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.economic-section h3 {
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--charcoal);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.verdict-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.verdict-box {
+  flex: 1;
+  min-width: 220px;
+  border: 2px solid var(--brown);
+  padding: 16px;
+  background-color: var(--parchment-d);
+  text-shadow: none;
+}
+
+.verdict-box h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.verdict-box.pros h3 {
+  color: #3a5a2a;
+}
+
+.verdict-box.cons h3 {
+  color: #7a2020;
+}
+
+.verdict-box p,
+.verdict-box li {
+  font-size: 1.6rem !important;
+  text-indent: 0 !important;
+  margin-top: 6px !important;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: var(--brown);
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.back-link:hover {
+  color: var(--charcoal);
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .model-card h2 {
+    font-size: 2rem;
+  }
+  .economic-section h2 {
+    font-size: 2rem;
+  }
+  .economic-section h3 {
+    font-size: 1.7rem;
+  }
+  .verdict-grid {
+    flex-direction: column;
+  }
+}
+
 /* Navbar styles */
 .navbar-link {
   color: var(--charcoal);
