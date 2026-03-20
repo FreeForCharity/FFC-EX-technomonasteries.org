@@ -14,16 +14,13 @@ assignees: ''
 
 <!-- 2-3 sentences: What are you proposing and why? -->
 
-
 ## Background & Motivation
 
 <!-- What problem does this solve? What opportunity does it create? -->
 
-
 ## Detailed Description
 
 <!-- Full description of the proposal -->
-
 
 ## Impact
 

@@ -1,17 +1,17 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import ProjectPage from '@/components/project-page'
+import ActiveProjectsPage from '@/components/active-projects-page'
 
 export const metadata: Metadata = {
-  title: 'The Pilot Project',
+  title: 'Active Projects',
   description:
-    'The first Techno-Monastery will be a proof of concept—a space where we test the model, refine our approach, and lay the foundation for something much larger.',
+    'Two candidate locations for the first Techno-Monastery: an eco-village in Sigel, Pennsylvania and a co-housing community in Nederland, Colorado.',
 }
 
 const Project = () => {
   return (
     <div>
-      <ProjectPage />
+      <ActiveProjectsPage />
     </div>
   )
 }
