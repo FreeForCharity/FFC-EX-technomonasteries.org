@@ -21,7 +21,6 @@ const CoHousingPage: React.FC = () => {
           ← Back to Economic Models
         </Link>
 
-        <h2 className="pageTitle">Co-housing</h2>
         <div className="pageSectionTitle">Private Lives, Shared Purpose</div>
 
         {/* History */}

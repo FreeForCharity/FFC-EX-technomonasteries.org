@@ -21,7 +21,6 @@ const EcovillagesPage: React.FC = () => {
           ← Back to Economic Models
         </Link>
 
-        <h2 className="pageTitle">Ecovillages</h2>
         <div className="pageSectionTitle">Intentional Communities at Scale</div>
 
         {/* History */}

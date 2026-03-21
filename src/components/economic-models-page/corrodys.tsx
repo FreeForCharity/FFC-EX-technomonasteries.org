@@ -21,7 +21,6 @@ const CorrodysPage: React.FC = () => {
           ← Back to Economic Models
         </Link>
 
-        <h2 className="pageTitle">Corrodys</h2>
         <div className="pageSectionTitle">A Medieval Endowment for Lifelong Support</div>
 
         {/* History */}
