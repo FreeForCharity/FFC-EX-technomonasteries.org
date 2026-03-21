@@ -52,6 +52,18 @@ const SigelPaPage: React.FC = () => {
               borderCollapse: 'collapse',
             }}
           >
+            <caption
+              className="sr-only"
+              style={{
+                position: 'absolute',
+                width: '1px',
+                height: '1px',
+                overflow: 'hidden',
+                clip: 'rect(0,0,0,0)',
+              }}
+            >
+              Sigel, Pennsylvania key facts
+            </caption>
             <tbody>
               {[
                 ['Location', 'Eldred Township, Jefferson County, PA'],

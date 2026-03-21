@@ -52,6 +52,18 @@ const NederlandCoPage: React.FC = () => {
               borderCollapse: 'collapse',
             }}
           >
+            <caption
+              className="sr-only"
+              style={{
+                position: 'absolute',
+                width: '1px',
+                height: '1px',
+                overflow: 'hidden',
+                clip: 'rect(0,0,0,0)',
+              }}
+            >
+              Nederland, Colorado key facts
+            </caption>
             <tbody>
               {[
                 ['Location', 'Nederland, Boulder County, Colorado'],

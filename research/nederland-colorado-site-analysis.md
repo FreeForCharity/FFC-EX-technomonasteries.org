@@ -212,9 +212,10 @@
 
 ### Fiber Availability
 
-- **No fiber to Nederland** as of early 2025. [VERIFY if any buildout has been announced]
+- **UPDATE (March 2026 live research):** Quantum Fiber now covers 26% of Nederland with speeds up to 8 Gbps. Maverix Broadband secured an $8.67M grant to expand fiber further. The original training data (below) was outdated.
+- ~~No fiber to Nederland as of early 2025.~~ (Superseded — see update above)
 - **Boulder County** has explored broadband improvement initiatives.
-- **Colorado Broadband Office** has grant programs under the federal BEAD program that could fund mountain community buildouts, but timelines are 2026-2030. [VERIFY status]
+- **Colorado Broadband Office** has grant programs under the federal BEAD program that could fund mountain community buildouts.
 - A co-housing community could potentially attract fiber buildout as an anchor tenant if it could guarantee 20+ subscriptions.
 
 ### Starlink Performance in Mountain Valleys
