@@ -12,7 +12,8 @@ const NederlandCoPage: React.FC = () => {
         <img
           className="showcaseImg"
           src={assetPath('/img/Blueprint.jpg')}
-          alt="Architectural blueprint concept for a Nederland, Colorado co-housing community"
+          alt=""
+          role="presentation"
         />
         <div className="showcase-overlay">
           <h1>Nederland, Colorado</h1>

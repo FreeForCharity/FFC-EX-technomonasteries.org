@@ -12,7 +12,8 @@ const SigelPaPage: React.FC = () => {
         <img
           className="showcaseImg"
           src={assetPath('/img/Blueprint.jpg')}
-          alt="Blueprint-style background for the Sigel, Pennsylvania eco-village project"
+          alt=""
+          role="presentation"
         />
         <div className="showcase-overlay">
           <h1>Sigel, Pennsylvania</h1>
