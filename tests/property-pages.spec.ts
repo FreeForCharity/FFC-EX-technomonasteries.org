@@ -39,7 +39,7 @@ test.describe('Active Projects Hub', () => {
 
     await expect(page.getByText('Roadmap')).toBeVisible()
     await expect(page.getByText('Foundation')).toBeVisible()
-    await expect(page.getByText('Evaluation')).toBeVisible()
+    await expect(page.getByText('Evaluation', { exact: true }).first()).toBeVisible()
   })
 
   test('should display Get Involved section with links', async ({ page }) => {
