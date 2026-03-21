@@ -9,7 +9,12 @@ const ActiveProjectsPage: React.FC = () => {
     <>
       {/* Showcase */}
       <div className="showcase">
-        <img className="showcaseImg" src={assetPath('/img/Blueprint.jpg')} alt="Blueprint" />
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/Blueprint.jpg')}
+          alt=""
+          role="presentation"
+        />
         <div className="showcase-overlay">
           <h1>Active Projects</h1>
         </div>
