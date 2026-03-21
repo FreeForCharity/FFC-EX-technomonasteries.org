@@ -9,7 +9,11 @@ const NederlandCoPage: React.FC = () => {
     <>
       {/* Showcase */}
       <div className="showcase">
-        <img className="showcaseImg" src={assetPath('/img/Blueprint.jpg')} alt="Rocky Mountains" />
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/Blueprint.jpg')}
+          alt="Architectural blueprint concept for a Nederland, Colorado co-housing community"
+        />
         <div className="showcase-overlay">
           <h1>Nederland, Colorado</h1>
         </div>

@@ -9,7 +9,11 @@ const SigelPaPage: React.FC = () => {
     <>
       {/* Showcase */}
       <div className="showcase">
-        <img className="showcaseImg" src={assetPath('/img/Blueprint.jpg')} alt="Allegheny Forest" />
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/Blueprint.jpg')}
+          alt="Blueprint-style background for the Sigel, Pennsylvania eco-village project"
+        />
         <div className="showcase-overlay">
           <h1>Sigel, Pennsylvania</h1>
         </div>
