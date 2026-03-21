@@ -17,7 +17,7 @@ const ActiveProjectsPage: React.FC = () => {
 
       {/* Main Content */}
       <div className="mainContent">
-        <h1 className="pageTitle">Where We&apos;re Building</h1>
+        <h2 className="pageTitle">Where We&apos;re Building</h2>
         <p>
           We&apos;re evaluating two locations for the first Techno-Monastery. Each offers a
           different model for creating a dedicated space where open-source developers, researchers,
@@ -67,19 +67,39 @@ const ActiveProjectsPage: React.FC = () => {
             >
               <tbody>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Nearest City</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Nearest City
+                  </th>
                   <td style={{ padding: '4px 8px' }}>DuBois (~25 min)</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Major Metro</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Major Metro
+                  </th>
                   <td style={{ padding: '4px 8px' }}>Pittsburgh (~2.5 hrs)</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Internet</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Internet
+                  </th>
                   <td style={{ padding: '4px 8px' }}>Starlink (50-200 Mbps)</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Est. Phase 1</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Est. Phase 1
+                  </th>
                   <td style={{ padding: '4px 8px' }}>$150K-$300K</td>
                 </tr>
               </tbody>
@@ -130,19 +150,39 @@ const ActiveProjectsPage: React.FC = () => {
             >
               <tbody>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Nearest City</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Nearest City
+                  </th>
                   <td style={{ padding: '4px 8px' }}>Boulder (~30 min)</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Major Metro</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Major Metro
+                  </th>
                   <td style={{ padding: '4px 8px' }}>Denver (~1 hr)</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Internet</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Internet
+                  </th>
                   <td style={{ padding: '4px 8px' }}>Fiber up to 8 Gbps</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '4px 8px', fontWeight: 'bold' }}>Est. Phase 1</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
+                  >
+                    Est. Phase 1
+                  </th>
                   <td style={{ padding: '4px 8px' }}>$2M-$3.5M</td>
                 </tr>
               </tbody>

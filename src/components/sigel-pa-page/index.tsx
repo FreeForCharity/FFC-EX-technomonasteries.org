@@ -17,7 +17,7 @@ const SigelPaPage: React.FC = () => {
 
       {/* Main Content */}
       <div className="mainContent">
-        <h1 className="pageTitle">An Eco-Village in the Allegheny Highlands</h1>
+        <h2 className="pageTitle">An Eco-Village in the Allegheny Highlands</h2>
 
         {/* Vision */}
         <p>
@@ -63,7 +63,12 @@ const SigelPaPage: React.FC = () => {
                 ['Est. Phase 1 Cost', '$150,000-$300,000'],
               ].map(([label, value]) => (
                 <tr key={label} style={{ borderBottom: '1px solid var(--brown)' }}>
-                  <td style={{ padding: '8px', fontWeight: 'bold', width: '35%' }}>{label}</td>
+                  <th
+                    scope="row"
+                    style={{ padding: '8px', fontWeight: 'bold', width: '35%', textAlign: 'left' }}
+                  >
+                    {label}
+                  </th>
                   <td style={{ padding: '8px' }}>{value}</td>
                 </tr>
               ))}
