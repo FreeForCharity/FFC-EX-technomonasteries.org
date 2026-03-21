@@ -28,9 +28,7 @@ const AboutPage: React.FC = () => {
                 aria-hidden="true"
                 className="illuminated-letter"
               />
-              <h2 aria-label="Our Mission">
-                <span aria-hidden="true">ur Mission</span>
-              </h2>
+              <h2>Our Mission</h2>
               <p>
                 TechnoMonasteries is dedicated to creating spaces where technology, community, and
                 creativity intersect. Inspired by the historical role of monasteries as centers of
@@ -53,9 +51,7 @@ const AboutPage: React.FC = () => {
                 aria-hidden="true"
                 className="illuminated-letter"
               />
-              <h2 aria-label="Why It Matters">
-                <span aria-hidden="true">hy It Matters</span>
-              </h2>
+              <h2>Why It Matters</h2>
               <ul className="calligraphy-list">
                 <li>
                   <strong>Democratizing Access:</strong> Technology and education should be
@@ -118,9 +114,7 @@ const AboutPage: React.FC = () => {
                 aria-hidden="true"
                 className="illuminated-letter"
               />
-              <h2 aria-label="Who We Are">
-                <span aria-hidden="true">ho We Are</span>
-              </h2>
+              <h2>Who We Are</h2>
               <p>
                 TechnoMonasteries is founded and maintained by a diverse group of technologists,
                 educators, and community organizers who share a vision of accessible, collaborative
@@ -156,9 +150,7 @@ const AboutPage: React.FC = () => {
                 aria-hidden="true"
                 className="illuminated-letter"
               />
-              <h2 aria-label="Contact">
-                <span aria-hidden="true">ontact</span>
-              </h2>
+              <h2>Contact</h2>
               <p>Have questions or want to learn more? Reach out to us:</p>
               <p className="contact-info">
                 <strong>Email:</strong>{' '}
@@ -174,9 +166,7 @@ const AboutPage: React.FC = () => {
                 aria-hidden="true"
                 className="illuminated-letter"
               />
-              <h2 aria-label="Get Involved">
-                <span aria-hidden="true">et Involved</span>
-              </h2>
+              <h2>Get Involved</h2>
               <p>
                 Join our growing community and help shape the future of TechnoMonasteries. Connect
                 with us on Discord to participate in discussions, find collaboration opportunities,
