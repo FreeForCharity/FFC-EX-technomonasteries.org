@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import Link from 'next/link'
 import { assetPath } from '@/lib/assetPath'
@@ -7,11 +5,13 @@ import { assetPath } from '@/lib/assetPath'
 const CoHousingPage: React.FC = () => {
   return (
     <div>
-      <div
-        className="showcase"
-        style={{ backgroundImage: `url(${assetPath('/img/building.jpg')})` }}
-      >
-        <div className="overlay">
+      <div className="showcase">
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/building.jpg')}
+          alt="A co-housing building representing shared living arrangements"
+        />
+        <div className="showcase-overlay">
           <h1>Co-housing</h1>
         </div>
       </div>

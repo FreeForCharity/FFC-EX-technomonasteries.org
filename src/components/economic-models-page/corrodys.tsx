@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import Link from 'next/link'
 import { assetPath } from '@/lib/assetPath'
@@ -7,11 +5,13 @@ import { assetPath } from '@/lib/assetPath'
 const CorrodysPage: React.FC = () => {
   return (
     <div>
-      <div
-        className="showcase"
-        style={{ backgroundImage: `url(${assetPath('/img/Blueprint.jpg')})` }}
-      >
-        <div className="overlay">
+      <div className="showcase">
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/Blueprint.jpg')}
+          alt="A blueprint representing the structural planning behind the corrody economic model"
+        />
+        <div className="showcase-overlay">
           <h1>Corrodys</h1>
         </div>
       </div>

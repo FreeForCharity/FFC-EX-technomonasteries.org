@@ -15,20 +15,20 @@ assignees: ''
 ## Condition Assessment
 
 ### Structures
+
 <!-- Describe the condition of any existing buildings or structures -->
 
-
 ### Utilities
+
 <!-- Power, water, sewage — what exists, what's needed -->
 
-
 ### Land
+
 <!-- Terrain, soil, vegetation, drainage, access roads -->
 
-
 ### Surrounding Area
-<!-- Neighborhood, nearby properties, local amenities visited -->
 
+<!-- Neighborhood, nearby properties, local amenities visited -->
 
 ## Key Observations
 
@@ -49,8 +49,8 @@ assignees: ''
 <!-- Did you meet neighbors, officials, agents? -->
 
 | Name | Role | Contact | Notes |
-|------|------|---------|-------|
-| | | | |
+| ---- | ---- | ------- | ----- |
+|      |      |         |       |
 
 ## Internet Test (If Possible)
 
@@ -65,7 +65,6 @@ assignees: ''
 - [ ] **Pass** — property does not meet our needs
 
 **Reasoning:**
-
 
 ## Next Steps
 

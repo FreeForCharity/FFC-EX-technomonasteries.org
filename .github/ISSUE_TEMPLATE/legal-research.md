@@ -21,11 +21,9 @@ assignees: ''
 
 <!-- Summarize what you found -->
 
-
 ## Key Details
 
 <!-- Specific regulations, statutes, codes, or requirements -->
-
 
 ## Source Links
 
@@ -37,7 +35,6 @@ assignees: ''
 ## Implications for Our Project
 
 <!-- How does this affect our plans? What do we need to do? -->
-
 
 ## Action Items
 
@@ -55,5 +52,5 @@ assignees: ''
 <!-- Relevant officials, attorneys, or experts spoken to -->
 
 | Name | Role | Contact | Notes |
-|------|------|---------|-------|
-| | | | |
+| ---- | ---- | ------- | ----- |
+|      |      |         |       |
