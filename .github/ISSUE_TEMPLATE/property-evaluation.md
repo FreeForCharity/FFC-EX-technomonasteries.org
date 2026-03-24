@@ -14,17 +14,17 @@ assignees: ''
 
 ## Key Details
 
-| Field | Details |
-|-------|---------|
-| Asking Price / Lease Terms | |
-| Acreage / Square Footage | |
-| Zoning Classification | |
-| Existing Structures | |
-| Condition | |
-| Internet Availability | |
-| Water Source | |
-| Power Source | |
-| Road Access | |
+| Field                      | Details |
+| -------------------------- | ------- |
+| Asking Price / Lease Terms |         |
+| Acreage / Square Footage   |         |
+| Zoning Classification      |         |
+| Existing Structures        |         |
+| Condition                  |         |
+| Internet Availability      |         |
+| Water Source               |         |
+| Power Source               |         |
+| Road Access                |         |
 
 ## Location Context
 
@@ -54,16 +54,16 @@ assignees: ''
 
 _Reference the Property Evaluation Framework in the Wiki_
 
-| Category | Score (1-5) | Notes |
-|----------|-------------|-------|
-| Location & Accessibility | | |
-| Zoning & Land Use | | |
-| Cost Structure | | |
-| Infrastructure | | |
-| Community Fit | | |
-| Environmental | | |
-| Growth Potential | | |
-| **Total** | | |
+| Category                 | Score (1-5) | Notes |
+| ------------------------ | ----------- | ----- |
+| Location & Accessibility |             |       |
+| Zoning & Land Use        |             |       |
+| Cost Structure           |             |       |
+| Infrastructure           |             |       |
+| Community Fit            |             |       |
+| Environmental            |             |       |
+| Growth Potential         |             |       |
+| **Total**                |             |       |
 
 ## Recommendation
 
