@@ -117,4 +117,44 @@ export const testConfig = {
       cancel: 'Cancel',
     },
   },
+
+  /**
+   * Economic Models Configuration
+   * Used in: tests/economic-models.spec.ts
+   */
+  economicModels: {
+    footerLinkText: 'Economic Models',
+    footerLinkHref: '/economic-models',
+    pages: {
+      main: {
+        title: 'Economic Models | Techno-Monasteries',
+        subpageLinks: [
+          '/economic-models/ecovillages',
+          '/economic-models/co-housing',
+          '/economic-models/corrodys',
+        ],
+      },
+      ecovillages: {
+        title: 'Ecovillages | Economic Models | Techno-Monasteries',
+        contentTerms: ['Findhorn', 'Auroville', 'Global Ecovillage Network'],
+        backLink: '/economic-models',
+      },
+      coHousing: {
+        title: 'Co-housing | Economic Models | Techno-Monasteries',
+        contentTerms: ['Sættedammen', 'Denmark'],
+        backLink: '/economic-models',
+      },
+      corrodys: {
+        title: 'Corrodys | Economic Models | Techno-Monasteries',
+        contentTerms: ['medieval', 'monastery'],
+        backLink: '/economic-models',
+      },
+    },
+    sitemapUrls: [
+      '/economic-models',
+      '/economic-models/ecovillages',
+      '/economic-models/co-housing',
+      '/economic-models/corrodys',
+    ],
+  },
 }
