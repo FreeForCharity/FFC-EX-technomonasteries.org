@@ -37,9 +37,14 @@ const Footer: React.FC = () => {
                 FAQ
               </Link>
             </li>
-            <li className="footer-item">
+            <li className="footer-item" style={{ marginRight: '15px' }}>
               <Link href="/about" className="navbar-link">
                 About
+              </Link>
+            </li>
+            <li className="footer-item">
+              <Link href="/economic-models" className="navbar-link">
+                Economic Models
               </Link>
             </li>
           </ul>

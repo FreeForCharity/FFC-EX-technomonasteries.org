@@ -22,7 +22,12 @@ const AboutPage: React.FC = () => {
           <div className="left-column">
             {/* Our Mission */}
             <section className="about-section">
-              <img src={assetPath('/img/O.png')} alt="" className="illuminated-letter" />
+              <img
+                src={assetPath('/img/O.png')}
+                alt=""
+                aria-hidden="true"
+                className="illuminated-letter"
+              />
               <h2>Our Mission</h2>
               <p>
                 TechnoMonasteries is dedicated to creating spaces where technology, community, and
@@ -40,7 +45,12 @@ const AboutPage: React.FC = () => {
 
             {/* Why It Matters */}
             <section className="about-section">
-              <img src={assetPath('/img/W.png')} alt="" className="illuminated-letter" />
+              <img
+                src={assetPath('/img/W.png')}
+                alt=""
+                aria-hidden="true"
+                className="illuminated-letter"
+              />
               <h2>Why It Matters</h2>
               <ul className="calligraphy-list">
                 <li>
@@ -98,7 +108,12 @@ const AboutPage: React.FC = () => {
           <div className="right-column">
             {/* Who We Are */}
             <section className="about-section">
-              <img src={assetPath('/img/W.png')} alt="" className="illuminated-letter" />
+              <img
+                src={assetPath('/img/W.png')}
+                alt=""
+                aria-hidden="true"
+                className="illuminated-letter"
+              />
               <h2>Who We Are</h2>
               <p>
                 TechnoMonasteries is founded and maintained by a diverse group of technologists,
@@ -129,7 +144,12 @@ const AboutPage: React.FC = () => {
 
             {/* Contact */}
             <section className="about-section">
-              <img src={assetPath('/img/C.png')} alt="" className="illuminated-letter" />
+              <img
+                src={assetPath('/img/C.png')}
+                alt=""
+                aria-hidden="true"
+                className="illuminated-letter"
+              />
               <h2>Contact</h2>
               <p>Have questions or want to learn more? Reach out to us:</p>
               <p className="contact-info">
@@ -140,7 +160,12 @@ const AboutPage: React.FC = () => {
 
             {/* Get Involved */}
             <section className="about-section">
-              <img src={assetPath('/img/G.jpg')} alt="" className="illuminated-letter" />
+              <img
+                src={assetPath('/img/G.jpg')}
+                alt=""
+                aria-hidden="true"
+                className="illuminated-letter"
+              />
               <h2>Get Involved</h2>
               <p>
                 Join our growing community and help shape the future of TechnoMonasteries. Connect
