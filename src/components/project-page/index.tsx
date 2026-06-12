@@ -31,45 +31,83 @@ const ProjectPage: React.FC = () => {
       {/* Main Content */}
       <div className="mainContent">
         <h1 className="pageTitle">The Pilot Project</h1>
-        <div className="pageSectionTitle">Laying the First Stone</div>
+        <div className="pageSectionTitle">Overview</div>
         <p>
-          We have to start somewhere. The first Techno-Monastery will be a proof of concept—a space
-          where we test the model, refine our approach, and lay the foundation for something much
-          larger. This pilot project will demonstrate how a dedicated physical space can empower
-          open-source developers, researchers, and creators to work without distractions,
-          collaborate in person, and push the boundaries of knowledge. It&apos;s our chance to test
-          what works, adapt to real-world needs, and prove that dedicated spaces for deep work can
-          lead to meaningful breakthroughs.
+          This project is being developed in partnership with a local family-led nonprofit and
+          serves as the first site for the TechnoMonasteries model. Located near Sigel,
+          Pennsylvania, the site offers a quiet rural setting where we can test and refine ideas
+          around sabbatical spaces for open-source and other public-good technology projects. The
+          goal is to start small, learn from experience, and develop a model that can inform future
+          TechnoMonasteries sites.
+        </p>
+        <div className="pageSectionTitle">The Property</div>
+        <p>
+          The project consists of two adjacent rural properties totaling approximately 70 acres.
         </p>
         <p>
-          We&apos;re currently scouting properties that balance affordability, historical character,
-          and the infrastructure needed to support a small group of open-source developers and
-          researchers. This space will serve as a prototype for a global network of spaces designed
-          to sustain open-source development and public goods. Can we build a sustainable model that
-          attracts talent, fosters collaboration, and accelerates important work? The lessons we
-          learn here will shape the future of Techno-Monasteries.
+          One property includes a farmhouse and pastureland that has remained under the stewardship
+          of the same family for multiple generations. While still used for family gatherings, the
+          farmhouse remains unoccupied for much of the year. During the early stages of the project,
+          it is expected to support planning activities, volunteer coordination, and limited
+          work-stay use when available.
         </p>
-        <div className="pageSectionTitle">Blueprint for Impact</div>
         <p>
-          But this is just the beginning. Our goal is to create a model that can be replicated,
-          adapted, and expanded across the world. By documenting our successes and challenges,
-          refining governance and funding strategies, and testing sustainable operational models, we
-          will provide a clear roadmap for future initiatives. Techno-Monasteries will not just be a
-          home for open-source innovation—they will be a blueprint for the future of sustainable
-          public goods.
+          The second property consists of undeveloped woodland with a natural spring. Existing
+          driveway access and nearby utilities provide a foundation for future infrastructure while
+          preserving the rural character of the site.
         </p>
-
+        <p>
+          Together, the properties provide both a usable starting point and room for future growth.
+        </p>
+        <div className="pageSectionTitle">Current Phase</div>
+        <p>
+          The project is currently focused on planning and evaluation. Current efforts include
+          probate proceedings, preliminary site planning, utility and septic evaluation, volunteer
+          coordination, nonprofit structuring, infrastructure planning, and establishing a long-term
+          stewardship plan for the property.
+        </p>
+        <p>Early infrastructure planning includes:</p>
+        <ul className="calligraphy-list">
+          <li>Shared kitchen and gathering space</li>
+          <li>Coworking areas</li>
+          <li>Community bathhouse and restroom facilities</li>
+          <li>Approximately ten campsites</li>
+          <li>RV parking areas</li>
+          <li>Site planning for future tiny homes</li>
+          <li>Shared utility connections and outdoor spaces</li>
+        </ul>
+        <p>
+          The focus at this stage is understanding what is practical, sustainable, and achievable
+          for an initial pilot site.
+        </p>
+        <div className="pageSectionTitle">Long-Term Vision</div>
+        <p>
+          The long-term goal is to create a sabbatical space where open-source and other public-good
+          tech builders can spend focused time working on projects that benefit the public-good.
+        </p>
+        <p>
+          Potential accommodations include campsites, a community shower house, and accessible tiny
+          homes designed for longer stays. Shared coworking spaces, workshops, and indoor and
+          outdoor gathering areas would support both focused work and collaboration. As the project
+          evolves, the site will serve as a learning laboratory for future TechnoMonasteries,
+          helping establish patterns, practices, and infrastructure that can be adapted elsewhere.
+        </p>
+        <div className="pageSectionTitle">Why This Site?</div>
+        <p>
+          This location was selected because it combines several qualities that make it well suited
+          for a pilot project:
+        </p>
+        <ul className="calligraphy-list">
+          <li>Partnership with a local family-led nonprofit</li>
+          <li>Existing farmhouse and supporting infrastructure</li>
+          <li>Approximately 70 acres with natural spring and room for future growth</li>
+          <li>Rural setting conducive to focused work</li>
+          <li>
+            Proximity to major population and technology centers across the northeastern United
+            States and Canada
+          </li>
+        </ul>
         <br />
-        <br />
-        <br />
-        <div className="pageSectionTitle">From Empty Halls to Innovation Hubs</div>
-        <p>
-          For the price of a three-bedroom in San Francisco, we&apos;ve found historic properties in
-          Europe—spacious, full of character, and ready to be transformed. Here are a few that could
-          become the first Techno-Monastery. Each offers unique potential—what would you build here?
-        </p>
-
-        <div className="carousel"></div>
       </div>
     </>
   )
