@@ -33,31 +33,26 @@ const ProjectPage: React.FC = () => {
         <h1 className="pageTitle">The Pilot Project</h1>
         <div className="pageSectionTitle">Overview</div>
         <p>
-          This project is being developed in partnership with a local family-led nonprofit and
-          serves as the first site for the TechnoMonasteries model. Located near Sigel,
-          Pennsylvania, the site offers a quiet rural setting where we can test and refine ideas
-          around sabbatical spaces for open-source and other public-good technology projects. The
-          goal is to start small, learn from experience, and develop a model that can inform future
-          TechnoMonasteries sites.
+          This project is being developed in partnership with a local nonprofit and serves as the
+          first site for the TechnoMonasteries model. Located near Sigel, Pennsylvania, the site
+          offers a quiet rural setting where we can test and refine ideas around sabbatical spaces
+          for open-source and other public-good technology projects. The goal is to start small,
+          learn from experience, and develop a model that can inform future TechnoMonasteries sites.
         </p>
         <div className="pageSectionTitle">The Property</div>
+        <p>The project site consists of roughly 70 acres of farmland and woodland.</p>
         <p>
-          The project consists of two adjacent rural properties totaling approximately 70 acres.
+          The site includes an existing farmhouse and pastureland maintained by our local nonprofit
+          partner. During the early stages of the project, the farmhouse is expected to support
+          planning activities, volunteer coordination, and limited work-stay use when available.
         </p>
         <p>
-          One property includes a farmhouse and pastureland that has remained under the stewardship
-          of the same family for multiple generations. While still used for family gatherings, the
-          farmhouse remains unoccupied for much of the year. During the early stages of the project,
-          it is expected to support planning activities, volunteer coordination, and limited
-          work-stay use when available.
+          The remainder of the site is undeveloped woodland. Existing access and nearby utilities
+          provide a foundation for future infrastructure while preserving the rural character of the
+          site.
         </p>
         <p>
-          The second property consists of undeveloped woodland with a natural spring. Existing
-          driveway access and nearby utilities provide a foundation for future infrastructure while
-          preserving the rural character of the site.
-        </p>
-        <p>
-          Together, the properties provide both a usable starting point and room for future growth.
+          Together, these features provide both a usable starting point and room for future growth.
         </p>
         <div className="pageSectionTitle">Current Phase</div>
         <p>
@@ -98,9 +93,9 @@ const ProjectPage: React.FC = () => {
           for a pilot project:
         </p>
         <ul className="calligraphy-list">
-          <li>Partnership with a local family-led nonprofit</li>
+          <li>Partnership with a local nonprofit</li>
           <li>Existing farmhouse and supporting infrastructure</li>
-          <li>Approximately 70 acres with natural spring and room for future growth</li>
+          <li>Roughly 70 acres with room for future growth</li>
           <li>Rural setting conducive to focused work</li>
           <li>
             Proximity to major population and technology centers across the northeastern United
