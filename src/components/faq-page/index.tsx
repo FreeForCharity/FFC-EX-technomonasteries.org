@@ -314,8 +314,8 @@ const FAQPage: React.FC = () => {
             <div className="answer">
               <p>
                 Our first TechnoMonastery initiative is currently underway in rural Pennsylvania,
-                USA. The site is presently bare land and in the early stages of development, with
-                infrastructure and community-building already beginning. Stay tuned.
+                USA. The site is in the early stages of development, with planning and
+                community-building already beginning. Stay tuned.
               </p>
             </div>
           </div>
