@@ -16,7 +16,9 @@ test.describe('Property Pages', () => {
   test('homepage should have Project link in footer navigation', async ({ page }) => {
     await page.goto('/')
 
-    const projectLink = page.locator('a.navbar-link', {
+    // Scope to the footer: header navigation may also contain a Project link,
+    // which would trip Playwright's strict mode with an unscoped locator.
+    const projectLink = page.locator('footer a.navbar-link', {
       hasText: testConfig.propertyPages.footerLinkText,
     })
     await expect(projectLink).toBeVisible()
