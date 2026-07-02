@@ -5,7 +5,7 @@ import SigelPaPage from '@/components/sigel-pa-page'
 export const metadata: Metadata = {
   title: 'Sigel, Pennsylvania — Eco-Village',
   description:
-    'An eco-village Techno-Monastery in the Allegheny Highlands of western Pennsylvania. Affordable land, natural beauty, and a 20-year lease model for open-source developers.',
+    'An eco-village Techno-Monastery in the Allegheny Highlands of western Pennsylvania. Affordable land, natural beauty, and a nonprofit partnership with a charity lease for open-source developers.',
 }
 
 const SigelPa = () => {
