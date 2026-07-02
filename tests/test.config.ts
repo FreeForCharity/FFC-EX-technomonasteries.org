@@ -103,6 +103,15 @@ export const testConfig = {
   },
 
   /**
+   * Property Pages Configuration
+   * Used in: tests/property-pages.spec.ts
+   */
+  propertyPages: {
+    footerLinkText: 'Project',
+    footerLinkHref: '/project',
+  },
+
+  /**
    * Cookie Consent Configuration
    * Used in: tests/cookie-consent.spec.ts
    */
