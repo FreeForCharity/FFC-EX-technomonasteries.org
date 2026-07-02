@@ -1,7 +1,7 @@
 # Nederland, Colorado -- Site Analysis for Techno-Monastery Co-Housing
 
 **Research Date:** 2026-03-20
-**Status:** DRAFT -- Based on training data (cutoff May 2025). Items marked [VERIFY] need confirmation via live web research or direct contact.
+**Status:** DRAFT -- Primarily based on training data (cutoff May 2025). Sections explicitly labeled "March 2026 live research" reflect information checked against live sources as of that date. Items marked [VERIFY] are hypotheses or older data that still need confirmation via live web research or direct contact.
 **Purpose:** Evaluate Nederland, CO as a candidate location for an open-source developer co-housing intentional community.
 
 ---
