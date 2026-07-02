@@ -62,9 +62,9 @@ const ProjectPage: React.FC = () => {
         <div className="pageSectionTitle">Current Phase</div>
         <p>
           The project is currently focused on planning and evaluation. Current efforts include
-          probate proceedings, preliminary site planning, utility and septic evaluation, volunteer
-          coordination, nonprofit structuring, infrastructure planning, and establishing a long-term
-          stewardship plan for the property.
+          preliminary site planning, utility and septic evaluation, volunteer coordination,
+          nonprofit structuring, infrastructure planning, and establishing a long-term stewardship
+          plan for the property.
         </p>
         <p>Early infrastructure planning includes:</p>
         <ul className="calligraphy-list">
