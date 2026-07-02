@@ -54,7 +54,7 @@ const ActiveProjectsPage: React.FC = () => {
                 textIndent: '0',
               }}
             >
-              Eco-Village &bull; 20-Year Lease &bull; Research Phase
+              Eco-Village &bull; Nonprofit Partnership &bull; Charity Lease
             </p>
             <p style={{ textIndent: '0', fontSize: '1.5rem' }}>
               An eco-village in the Allegheny Highlands of Jefferson County, where affordable land
@@ -115,9 +115,9 @@ const ActiveProjectsPage: React.FC = () => {
                     scope="row"
                     style={{ padding: '4px 8px', fontWeight: 'bold', textAlign: 'left' }}
                   >
-                    Est. Phase 1
+                    Site
                   </th>
-                  <td style={{ padding: '4px 8px' }}>$150K-$300K</td>
+                  <td style={{ padding: '4px 8px' }}>~70 acres, farmland and woodland</td>
                 </tr>
               </tbody>
             </table>
