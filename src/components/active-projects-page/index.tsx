@@ -32,14 +32,13 @@ const ActiveProjectsPage: React.FC = () => {
         </p>
 
         {/* Property Cards */}
-        <div className="twoCol" style={{ marginTop: '40px', gap: '20px' }}>
+        <div style={{ marginTop: '40px', gap: '20px' }}>
           {/* Sigel PA Card */}
           <div
-            className="innerCol"
             style={{
               backgroundColor: 'rgba(200, 195, 180, 0.4)',
               padding: '20px',
-              border: '2px solid var(--brown)',
+              border: '2px solid var(--line-color)',
             }}
           >
             <div className="pageSectionTitle" style={{ marginBottom: '10px' }}>
@@ -130,11 +129,10 @@ const ActiveProjectsPage: React.FC = () => {
 
           {/* Nederland CO Card */}
           <div
-            className="innerCol"
             style={{
               backgroundColor: 'rgba(200, 195, 180, 0.4)',
               padding: '20px',
-              border: '2px solid var(--brown)',
+              border: '2px solid var(--line-color)',
             }}
           >
             <div className="pageSectionTitle" style={{ marginBottom: '10px' }}>

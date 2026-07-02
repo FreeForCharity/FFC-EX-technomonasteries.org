@@ -26,6 +26,9 @@ const Header: React.FC = () => {
         <Link href="/about" className="navbar-link">
           About
         </Link>
+        <Link href="/economic-models" className="navbar-link">
+          Economic Models
+        </Link>
       </nav>
       {/* Header with logo, title and tagline */}
       <div className="header">

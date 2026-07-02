@@ -174,8 +174,13 @@ const AboutPage: React.FC = () => {
                 and stay updated on our progress.
               </p>
               <div style={{ textAlign: 'center' }}>
-                <a href="https://discord.gg/T8dxSgZS2J" target="_blank" rel="noopener noreferrer">
-                  <button className="gildedButton">Join our Discord</button>
+                <a
+                  className="gildedButton"
+                  href="https://discord.gg/T8dxSgZS2J"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join our Discord
                 </a>
               </div>
             </section>
