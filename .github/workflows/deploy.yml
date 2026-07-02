@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -41,7 +41,7 @@ jobs:
           cache: 'npm'
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
@@ -70,7 +70,7 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH || format('/{0}', github.event.repository.name) }}
 
       - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./out
 
@@ -85,4 +85,52 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
+      - name: Post-deploy smoke check
+        env:
+          DEPLOY_URL: ${{ steps.deployment.outputs.page_url }}
+        timeout-minutes: 5
+        run: |
+          python3 - <<'PY'
+          import os, sys, time, socket, urllib.request, urllib.error
+          url = os.environ.get("DEPLOY_URL")
+          if not url:
+              print("DEPLOY_URL not set", file=sys.stderr)
+              sys.exit(2)
+          total_wait_seconds = 180
+          delay_seconds = 5
+          timeout_seconds = 10
+          deadline = time.monotonic() + total_wait_seconds
+          attempt = 0
+          last = None
+          while True:
+              remaining = deadline - time.monotonic()
+              if remaining <= 0:
+                  print(f"Smoke check failed: {url} (last: {last})", file=sys.stderr)
+                  sys.exit(1)
+              attempt += 1
+              try:
+                  req = urllib.request.Request(url, method="GET", headers={"User-Agent": "gh-actions-smoke"})
+                  req_timeout = min(timeout_seconds, remaining)
+                  with urllib.request.urlopen(req, timeout=req_timeout) as resp:
+                      code = resp.getcode()
+                  print(f"Attempt {attempt}: HTTP {code}")
+                  print("Smoke check passed")
+                  sys.exit(0)
+              except urllib.error.HTTPError as e:
+                  last = f"HTTPError {e.code}"
+                  print(f"Attempt {attempt}: HTTPError {e.code}")
+                  try:
+                      e.close()
+                  except Exception:
+                      pass
+              except (urllib.error.URLError, TimeoutError, socket.timeout) as e:
+                  last = str(e)
+                  print(f"Attempt {attempt} error: {e}")
+              remaining = deadline - time.monotonic()
+              if remaining <= 0:
+                  print(f"Smoke check failed: {url} (last: {last})", file=sys.stderr)
+                  sys.exit(1)
+              time.sleep(min(delay_seconds, remaining))
+          PY
