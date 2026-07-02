@@ -19,36 +19,46 @@ const FAQPage: React.FC = () => {
           src={assetPath('/img/building.jpg')}
           alt="TechnoMonasteries building"
         />
-        <div className="showcase-overlay">
-          <h1>Frequently Asked Questions</h1>
+        <div
+          className="showcase-nav"
+          style={{ width: '96%', margin: 'auto', position: 'absolute', top: '3%', left: '2%' }}
+        >
+          <img
+            src={assetPath('/img/logo.png')}
+            alt="Logo"
+            className="showcase-nav-img"
+            style={{ float: 'left' }}
+          />
+          <img
+            src={assetPath('/img/Wells_clock_exterior.png')}
+            alt="Wells Clock"
+            className="showcase-nav-img"
+            style={{ float: 'right' }}
+          />
         </div>
       </div>
 
+      {/* Main Content */}
       <div className="mainContent">
-        <div className="scroll-buttons">
-          <button onClick={() => scrollToSection('mission-purpose')} className="scroll-btn">
-            Mission &amp; Purpose
+        <h1 className="pageTitle">Frequently Asked Questions</h1>
+        <div className="faqAccordion">
+          <button className="faqButton" onClick={() => scrollToSection('mission-purpose')}>
+            Mission & Purpose
           </button>
-          <button onClick={() => scrollToSection('participation')} className="scroll-btn">
+          <button className="faqButton" onClick={() => scrollToSection('participation')}>
             Participation
           </button>
-          <button onClick={() => scrollToSection('long-term-vision')} className="scroll-btn">
-            Long Term Vision
+          <button className="faqButton" onClick={() => scrollToSection('operations')}>
+            Operations & Support
           </button>
-          <button onClick={() => scrollToSection('operations-support')} className="scroll-btn">
-            Operations &amp; Support
+          <button className="faqButton" onClick={() => scrollToSection('long-term-vision')}>
+            Long Term Vision
           </button>
         </div>
 
         {/* Mission & Purpose Section */}
         <section id="mission-purpose" className="faq-section">
-          <h2>Mission &amp; Purpose</h2>
-          <img
-            src={assetPath('/img/missionAndPurpose.jpg')}
-            alt="Mission and Purpose"
-            className="section-image"
-          />
-
+          <h2 className="faq-section">Mission &amp; Purpose</h2>
           <div className="qa-pair">
             <div className="question">
               <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
@@ -56,10 +66,9 @@ const FAQPage: React.FC = () => {
             </div>
             <div className="answer">
               <p>
-                A TechnoMonastery is a community-driven space where technology, creativity, and
-                collaboration come together. Inspired by the historical role of monasteries as
-                centers of learning and preservation, TechnoMonasteries aim to be modern sanctuaries
-                for innovation, skill-building, and meaningful work.
+                A TechnoMonastery is a modern reimagining of the historical monastery as a work-stay
+                for people developing open-source software and public-interest technology. These
+                spaces support focused work sprints for open-source contributors.
               </p>
             </div>
           </div>
@@ -67,14 +76,17 @@ const FAQPage: React.FC = () => {
           <div className="qa-pair">
             <div className="question">
               <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>What is the mission of TechnoMonasteries?</h3>
+              <h3>Why support open-source software?</h3>
             </div>
             <div className="answer">
               <p>
-                Our mission is to create accessible spaces where individuals can develop technical
-                skills, collaborate on projects, and contribute to the common good. We believe in
-                fostering environments that prioritize learning, creativity, and community over
-                profit.
+                Open-source software (OSS) forms the backbone of modern society, critical
+                infrastructure, global communications, and education. Despite its impact, many
+                open-source developers receive little or no compensation for their contributions. By
+                supporting open-source software, we ensure the sustainability of these essential
+                projects, support developers so they can focus on creating and maintaining
+                high-quality tools, and help ensure the long-term stewardship of open-source
+                projects.
               </p>
             </div>
           </div>
@@ -82,14 +94,14 @@ const FAQPage: React.FC = () => {
           <div className="qa-pair">
             <div className="question">
               <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>How do TechnoMonasteries differ from traditional coworking spaces?</h3>
+              <h3>Do TechnoMonasteries have a religious or spiritual component?</h3>
             </div>
             <div className="answer">
               <p>
-                Unlike traditional coworking spaces that focus on commercial ventures,
-                TechnoMonasteries emphasize community, education, and collaborative projects. Our
-                spaces are designed to support both individual growth and collective achievement,
-                with a focus on accessibility and inclusivity.
+                TechnoMonasteries are spaces dedicated to the development and support of open-source
+                software and public-interest technology. The term &apos;monastery&apos; is used
+                metaphorically to evoke the sense of community, focus, and dedication that is
+                characteristic of traditional monasteries.
               </p>
             </div>
           </div>
@@ -97,24 +109,18 @@ const FAQPage: React.FC = () => {
 
         {/* Participation Section */}
         <section id="participation" className="faq-section">
-          <h2>Participation</h2>
-          <img
-            src={assetPath('/img/participation.jpg')}
-            alt="Participation"
-            className="section-image"
-          />
-
+          <h2 className="faq-section">Participation & Community</h2>
           <div className="qa-pair">
             <div className="question">
               <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>Who can join a TechnoMonastery?</h3>
+              <h3>Who can participate in a TechnoMonastery?</h3>
             </div>
             <div className="answer">
               <p>
-                Anyone with an interest in technology, learning, and community collaboration is
-                welcome. Whether you&apos;re a beginner looking to learn new skills or an
-                experienced professional wanting to share knowledge, there&apos;s a place for you in
-                our community.
+                Open-source developers, maintainers, and others working on public-good technology
+                are encouraged to apply. We are especially interested in projects involving
+                open-source software and public interest technology. Participation will depend on
+                project alignment, community needs, and available space.
               </p>
             </div>
           </div>
@@ -122,13 +128,14 @@ const FAQPage: React.FC = () => {
           <div className="qa-pair">
             <div className="question">
               <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>Do I need to have technical experience to participate?</h3>
+              <h3>What if I want to help but my skills aren’t technical?</h3>
             </div>
             <div className="answer">
               <p>
-                No! TechnoMonasteries welcome people at all skill levels. We provide resources,
-                mentorship, and collaborative opportunities for everyone from complete beginners to
-                seasoned experts. The key is a willingness to learn and contribute.
+                We welcome all kinds of support! Beyond coding there are plenty of essential roles
+                that help keep the Techno Monasteries running smoothly. You can assist with building
+                and grounds maintenance, meal preparation, fundraising, and many other supporting
+                roles.
               </p>
             </div>
           </div>
@@ -136,13 +143,14 @@ const FAQPage: React.FC = () => {
           <div className="qa-pair">
             <div className="question">
               <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>How can I get involved?</h3>
+              <h3>What kinds of projects will be hosted?</h3>
             </div>
             <div className="answer">
               <p>
-                Join our Discord community to connect with others, learn about upcoming events, and
-                find opportunities to contribute. You can also follow our progress and participate
-                in discussions about establishing new TechnoMonasteries in different locations.
+                Our initial focus is on open-source software projects, along with efforts to build,
+                maintain, and fund TechnoMonastery properties. As we grow into additional
+                properties, we hope to expand our scope to support projects such as open hardware,
+                educational/open knowledge work, property restoration/adaptive reuse.
               </p>
             </div>
           </div>
@@ -150,119 +158,15 @@ const FAQPage: React.FC = () => {
           <div className="qa-pair">
             <div className="question">
               <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>Is there a cost to participate?</h3>
+              <h3>Will there be apprenticeship or mentorship opportunities?</h3>
             </div>
             <div className="answer">
               <p>
-                We&apos;re working to keep TechnoMonasteries as accessible as possible. While
-                specific models may vary by location, our goal is to minimize financial barriers
-                through community support, donations, and creative funding solutions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Long Term Vision Section */}
-        <section id="long-term-vision" className="faq-section">
-          <h2>Long Term Vision</h2>
-          <img
-            src={assetPath('/img/longTermVision.jpg')}
-            alt="Long Term Vision"
-            className="section-image"
-          />
-
-          <div className="qa-pair">
-            <div className="question">
-              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>What is the long-term vision for TechnoMonasteries?</h3>
-            </div>
-            <div className="answer">
-              <p>
-                We envision a global network of TechnoMonasteries that serve as hubs for innovation,
-                learning, and community empowerment. These spaces will preserve and advance
-                knowledge while providing accessible opportunities for people to develop skills and
-                collaborate on meaningful projects.
-              </p>
-            </div>
-          </div>
-
-          <div className="qa-pair">
-            <div className="question">
-              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>How will TechnoMonasteries expand?</h3>
-            </div>
-            <div className="answer">
-              <p>
-                Growth will be organic and community-driven. As interest grows in different regions,
-                local communities can establish their own TechnoMonasteries following our core
-                principles while adapting to their specific needs and contexts.
-              </p>
-            </div>
-          </div>
-
-          <div className="qa-pair">
-            <div className="question">
-              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>What role will technology play in the future of TechnoMonasteries?</h3>
-            </div>
-            <div className="answer">
-              <p>
-                Technology is both our tool and our focus. We&apos;ll continue to leverage digital
-                platforms for remote collaboration while maintaining physical spaces for hands-on
-                work. Our goal is to bridge the digital and physical worlds to create robust,
-                resilient communities.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Operations & Support Section */}
-        <section id="operations-support" className="faq-section">
-          <h2>Operations &amp; Support</h2>
-          <img
-            src={assetPath('/img/operationsAndSupport.jpg')}
-            alt="Operations and Support"
-            className="section-image"
-          />
-
-          <div className="qa-pair">
-            <div className="question">
-              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>How are TechnoMonasteries funded?</h3>
-            </div>
-            <div className="answer">
-              <p>
-                We&apos;re exploring multiple funding models including community contributions,
-                grants, partnerships with educational institutions, and revenue from collaborative
-                projects. Our priority is maintaining accessibility while ensuring sustainability.
-              </p>
-            </div>
-          </div>
-
-          <div className="qa-pair">
-            <div className="question">
-              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>Who manages TechnoMonasteries?</h3>
-            </div>
-            <div className="answer">
-              <p>
-                TechnoMonasteries are community-managed with a focus on collaborative governance.
-                Decision-making is distributed among active members, with an emphasis on
-                transparency and collective responsibility.
-              </p>
-            </div>
-          </div>
-
-          <div className="qa-pair">
-            <div className="question">
-              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
-              <h3>How can I support TechnoMonasteries?</h3>
-            </div>
-            <div className="answer">
-              <p>
-                There are many ways to support our mission: participate in our community, contribute
-                your skills and knowledge, help spread the word, or make a financial contribution.
-                Every form of support helps us build stronger, more accessible spaces for everyone.
+                Yes, as Techno Monasteries grow we plan to offer volunteer apprenticeships in
+                open-source development and other community-driven projects. These opportunities are
+                intended to provide tuition-free, hands-on experience through participation in
+                real-world projects. We provide resources and mentorship; you bring a willingness to
+                learn and contribute.
               </p>
             </div>
           </div>
@@ -275,14 +179,170 @@ const FAQPage: React.FC = () => {
             <div className="answer">
               <p>
                 Resources vary by location but typically include workspace, internet access,
-                collaboration tools, learning materials, and mentorship opportunities. We also
-                provide access to a global community of like-minded individuals working on diverse
-                projects.
+                learning materials, and mentorship opportunities.
               </p>
             </div>
           </div>
 
-          <img src={assetPath('/img/largeGroup.jpg')} alt="Community" className="section-image" />
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>How long are work-stays?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                Work-stays are typically temporary, lasting anywhere from a few weeks to a few
+                months. Rotating residents brings new energy while encouraging cross-pollination of
+                ideas. Some long-term stays are reserved for property caretakers and project leads.
+              </p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>Can participants bring travel companions?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                Yes. You’re welcome to bring travel companions and share your room with them,
+                provided their stay is arranged in advance. Even if they don’t have technical
+                skills, they can contribute in support roles such as maintenance, cooking, or
+                outreach. We encourage all to be actively involved in the community.
+              </p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>How do I apply for a work-stay?</h3>
+            </div>
+            <div className="answer">
+              <p>Application details will be announced as the first property develops.</p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>How can I get involved?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                Join our Discord community to connect with others, learn about project updates, and
+                find opportunities to contribute. You can also follow our progress and participate
+                in discussions about establishing new TechnoMonasteries in different locations.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Operations & Sustainability Section */}
+        <section id="operations" className="faq-section">
+          <h2 className="faq-section">Operations & Sustainability</h2>
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>How are TechnoMonasteries funded?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                We&apos;re exploring multiple funding models including donations, grants,
+                sponsorships, partnerships with educational institutions and aligned organizations,
+                collaborative projects, and other mission-aligned sources of revenue. The goal is to
+                create long-term sustainable spaces that can support open-source contributors
+                without relying entirely on short-term funding cycles.
+              </p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>Are there costs associated with staying at a TechnoMonastery?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                Work-stays are intended to remain financially accessible for contributors working on
+                aligned projects. We hope to operate primarily through donations, sponsorships, and
+                community support rather than traditional lodging fees. However, we do appreciate
+                donations to help cover the costs of food, utilities, and maintenance. Recommended
+                donations may help cover food, utilities, maintenance, and restoration costs.
+              </p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>How will the properties be maintained?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                Regular upkeep like cleaning, routine maintenance, and minor repairs will be the
+                responsibility of community volunteers. For larger repairs and specialized
+                maintenance, we will hire outside contractors.
+              </p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>How do you prevent TechnoMonasteries from becoming cult-like?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                Temporary residencies ensure participants don’t become entrenched, while encouraging
+                fresh perspectives. By focusing on tangible project outcomes in open-source work
+                rather than adherence to any ideology, we maintain a clear and purpose-driven
+                mission.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Long Term Vision Section */}
+        <section id="long-term-vision" className="faq-section">
+          <h2 className="faq-section">Vision & Future</h2>
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>Where will the first TechnoMonastery be located?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                Our first TechnoMonastery initiative is currently underway in rural Pennsylvania,
+                USA. The site is in the early stages of development, with planning and
+                community-building already beginning. Stay tuned.
+              </p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>When will the first TechnoMonastery open?</h3>
+            </div>
+            <div className="answer">
+              <p>The project is still in early development and construction planning stages.</p>
+            </div>
+          </div>
+
+          <div className="qa-pair">
+            <div className="question">
+              <img src={assetPath('/img/medieval_Q_sm.png')} alt="Q" className="q-icon" />
+              <h3>What is the long-term vision for TechnoMonasteries?</h3>
+            </div>
+            <div className="answer">
+              <p>
+                We envision a global network of TechnoMonasteries dedicated to supporting
+                open-source contributors, focused collaborative work, and long-term sustainability
+                for public goods.
+              </p>
+            </div>
+          </div>
         </section>
       </div>
     </div>

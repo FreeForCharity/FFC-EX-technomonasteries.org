@@ -38,80 +38,52 @@ const HomePage: React.FC = () => {
             <p>
               Throughout history, seekers of knowledge—Pythagoras in Egypt, Fibonacci in North
               Africa, and the scholars of the Silk Road—traveled between monasteries, libraries, and
-              centers of learning. Their journeys weren&apos;t just for personal enlightenment; they
+              centers of learning. Their journeys weren’t just for personal enlightenment; they
               carried ideas across borders, strengthening the fabric of shared knowledge.
             </p>
             <p>
-              Techno-Monasteries revive this tradition, forming a network of places where builders,
-              researchers, and creators can travel, exchange ideas, and refine their craft. Each
-              stop offers a unique environment—some nestled in historic cloisters, others in
-              repurposed retreats—all dedicated to fostering deep work and collaboration. Whether
-              staying for weeks or months, each visitor leaves something behind: contributions that
-              strengthen an ecosystem of shared knowledge and open innovation.
+              Techno-Monasteries revive this tradition for the digital age, creating environments
+              where builders can come together for focused work sprints.
             </p>
           </div>
 
-          <div className="calling">
-            <div className="pageSectionTitle">The Calling</div>
-            <img
-              src={assetPath('/img/robotRacing.JPG')}
-              alt="Robot Racing"
-              style={{ width: '35%', height: 'auto', float: 'right', marginLeft: '15px' }}
-            />
+          <div className="problem">
+            <div className="pageSectionTitle">The Problem</div>
+            <p>Many open-source and public-good builders face the same recurring problems:</p>
+            <ul className="calligraphy-list">
+              <li>Critical open-source infrastructure is often maintained with little support.</li>
+              <li>Burnout from balancing volunteer work with full-time jobs.</li>
+              <li>Isolation from working remotely and independently.</li>
+              <li>Few spaces built for immersive work sprints.</li>
+            </ul>
             <p>
-              Some feel it—a quiet pull toward something different. A life of focus, deep work, and
-              shared purpose. A place where knowledge is cultivated, projects take root, and ideas
-              are given space to grow.
-            </p>
-            <p>
-              Techno-Monasteries are modern sanctuaries for those who create in service of the
-              common good. Inspired by historical monasteries that preserved knowledge for future
-              generations, they provide a retreat from distraction—a space to work, think, and
-              collaborate. Some come seeking solitude, others find strength in a like-minded
-              community, but all come with a purpose: to build something lasting, something open,
-              something that enriches the commons.
+              Techno-Monasteries are designed to address these challenges by providing a physical
+              space that fosters focus, connection, and growth for builders.
             </p>
           </div>
 
           <div className="life">
-            <div className="pageSectionTitle">The Way of Life</div>
+            <div className="pageSectionTitle">Inside a Techno-Monastery</div>
             <p>
-              Life at a Techno-Monastery is a balance of focus, collaboration, and shared
-              experience. Quiet spaces support deep work, while communal areas foster spontaneous
-              discussion and collaboration. Whether you&apos;re coding, mapping ideas on a
-              whiteboard, or debating open-source governance over tea, the environment is designed
-              to inspire.
-            </p>
-            <img
-              src={assetPath('/img/volunteerMeal.jpg')}
-              alt="Volunteer Meal"
-              style={{ width: '40%', height: 'auto', float: 'left', marginRight: '15px' }}
-            />
-            <p>
-              Meals are flexible—some cook for themselves, while others join community meals. The
-              kitchen is a communal space where residents might pool groceries or collaborate on
-              simple dishes, but there&apos;s no set expectation. The monastery fosters a balance
-              between independence and community, where organic discussions, impromptu workshops,
-              and quiet moments of reflection naturally emerge. It&apos;s not just a place to
-              work—it&apos;s a space to think, build, and connect. How would you use this space to
-              bring your ideas to life?
+              Techno-Monasteries offer temporary accommodations and dedicated workspaces for
+              builders and technical teams. Designed around deep work, these spaces balance
+              independent work with shared projects, workshops, and in-person collaboration. More
+              than coworking spaces, Techno-Monasteries give people a place to step away from
+              distraction and concentrate on their work.
             </p>
           </div>
 
           <div className="cloister">
-            <div className="pageSectionTitle">Step Inside the Cloister</div>
+            <div className="pageSectionTitle">Join the First Build</div>
             <p>
-              Techno-Monasteries begin as an idea, but they take shape through those who gather to
-              build them. If this vision speaks to you, join the conversation, share your insights,
-              and help shape the first Techno-Monastery.
+              Techno-Monasteries is still in its early stages, and the first location in
+              Pennsylvania is beginning to take shape. We’re building the community, refining the
+              vision, and exploring what these spaces can become. Join the Discord to follow
+              progress, share ideas, and help shape the first Techno-Monastery.
             </p>
             <div style={{ textAlign: 'center' }}>
               <a href="https://discord.gg/T8dxSgZS2J" target="_blank" rel="noopener noreferrer">
-                <button className="gildedButton">
-                  <span style={{ color: 'brown' }}>*</span>
-                  Join our Discord
-                  <span style={{ color: 'brown' }}>*</span>
-                </button>
+                <button className="gildedButton">Join our Discord</button>
               </a>
             </div>
           </div>

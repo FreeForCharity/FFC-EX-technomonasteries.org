@@ -5,9 +5,16 @@ import Footer from './../components/footer'
 import CookieConsent from './../components/cookie-consent'
 import GoogleTagManager, { GoogleTagManagerNoScript } from './../components/google-tag-manager'
 import { metamorphous, novaFlat } from '@/lib/fonts'
+import { Modern_Antiqua } from 'next/font/google'
 
 // Get basePath for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
+const modernAntiqua = Modern_Antiqua({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-modern-antiqua',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://technomonasteries.org'),
@@ -93,12 +100,17 @@ export default function RootLayout({
         <GoogleTagManager />
       </head>
       <body
-        className={['antialiased', metamorphous.variable, novaFlat.variable].join(' ')}
+        className={[
+          'antialiased',
+          metamorphous.variable,
+          novaFlat.variable,
+          modernAntiqua.variable,
+        ].join(' ')}
         suppressHydrationWarning={true}
       >
         <GoogleTagManagerNoScript />
-        <div className="booklet-border">
-          <div className="booklet">
+        <div className="booklet-page">
+          <div className="booklet-frame ">
             <Header />
             {children}
             <Footer />

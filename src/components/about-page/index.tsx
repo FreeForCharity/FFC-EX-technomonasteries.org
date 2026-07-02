@@ -12,12 +12,28 @@ const AboutPage: React.FC = () => {
           src={assetPath('/img/workSpace.png')}
           alt="TechnoMonasteries workspace"
         />
-        <div className="showcase-overlay">
-          <h1>About TechnoMonasteries</h1>
+        <div
+          className="showcase-nav"
+          style={{ width: '96%', margin: 'auto', position: 'absolute', top: '3%', left: '2%' }}
+        >
+          <img
+            src={assetPath('/img/logo.png')}
+            alt="Logo"
+            className="showcase-nav-img"
+            style={{ float: 'left' }}
+          />
+          <img
+            src={assetPath('/img/Wells_clock_exterior.png')}
+            alt="Wells Clock"
+            className="showcase-nav-img"
+            style={{ float: 'right' }}
+          />
         </div>
       </div>
 
+      {/* Main Content */}
       <div className="mainContent">
+        <h1 className="pageTitle">About TechnoMonasteries</h1>
         <div className="two-column-layout">
           <div className="left-column">
             {/* Our Mission */}
@@ -30,16 +46,9 @@ const AboutPage: React.FC = () => {
               />
               <h2>Our Mission</h2>
               <p>
-                TechnoMonasteries is dedicated to creating spaces where technology, community, and
-                creativity intersect. Inspired by the historical role of monasteries as centers of
-                learning, preservation, and innovation, we aim to build modern sanctuaries for
-                collaborative work and skill development.
-              </p>
-              <p>
-                Our mission is to provide accessible environments where individuals can learn,
-                create, and contribute to projects that benefit the broader community. We believe in
-                the power of shared knowledge and collective effort to address real-world
-                challenges.
+                TechnoMonasteries reimagines monasteries for the digital age—where technologists,
+                innovators, and other future builders collaborate on meaningful work that benefits
+                humanity.
               </p>
             </section>
 
@@ -52,54 +61,51 @@ const AboutPage: React.FC = () => {
                 className="illuminated-letter"
               />
               <h2>Why It Matters</h2>
+              <br />
               <ul className="calligraphy-list">
                 <li>
-                  <strong>Democratizing Access:</strong> Technology and education should be
-                  available to everyone, not just those who can afford expensive institutions or
-                  memberships.
+                  <strong>Sustaining Open-Source:</strong> Critical digital infrastructure needs
+                  long-term support.
                 </li>
                 <li>
-                  <strong>Building Community:</strong> In an increasingly digital world, physical
-                  spaces for collaboration and human connection remain vital.
+                  <strong>Building the Builders:</strong> Communities grow stronger when people
+                  learn by building alongside others.
                 </li>
                 <li>
-                  <strong>Preserving Knowledge:</strong> Like historical monasteries, we aim to
-                  preserve and advance knowledge for future generations.
+                  <strong>Accelerating Breakthroughs:</strong> Focused environments and in-person
+                  collaboration fuel innovation.
                 </li>
                 <li>
-                  <strong>Fostering Innovation:</strong> By bringing diverse minds together, we
-                  create environments where innovative solutions can emerge.
-                </li>
-                <li>
-                  <strong>Prioritizing Purpose:</strong> We focus on meaningful work that serves the
-                  common good rather than purely commercial interests.
+                  <strong>Preserving Knowledge:</strong> Knowledge survives when communities have
+                  the space and continuity to maintain it.
                 </li>
               </ul>
             </section>
 
             {/* What We Offer */}
             <section className="about-section">
+              <img src={assetPath('/img/W.png')} alt="" className="illuminated-letter" />
               <h2>What We Offer</h2>
+              <br />
               <ul className="calligraphy-list">
                 <li>
-                  <strong>Collaborative Workspaces:</strong> Physical environments designed for
-                  focused work and creative collaboration.
+                  <strong>Work-Stays:</strong> Deep focus in inspiring settings.
                 </li>
                 <li>
-                  <strong>Learning Resources:</strong> Access to tools, materials, and mentorship to
-                  help you develop new skills.
+                  <strong>Collaborative Workspaces:</strong> Designed for focused work and in-person
+                  collaboration.
                 </li>
                 <li>
-                  <strong>Community Network:</strong> Connection to a global community of learners,
-                  creators, and innovators.
+                  <strong>Learning Through Contribution:</strong> Real-world projects, mentorship,
+                  and hands-on technical experience.
                 </li>
                 <li>
-                  <strong>Project Opportunities:</strong> Chances to work on meaningful projects
-                  that make a real difference.
+                  <strong>Community Network:</strong> Connections with technologists, innovators,
+                  and other future builders.
                 </li>
                 <li>
-                  <strong>Inclusive Environment:</strong> A welcoming space for people of all
-                  backgrounds and skill levels.
+                  <strong>Open-Source Incubator:</strong> Supporting open-source projects that
+                  support public-interest technology.
                 </li>
               </ul>
             </section>
@@ -116,29 +122,24 @@ const AboutPage: React.FC = () => {
               />
               <h2>Who We Are</h2>
               <p>
-                TechnoMonasteries is founded and maintained by a diverse group of technologists,
-                educators, and community organizers who share a vision of accessible, collaborative
-                spaces for innovation and learning.
+                TechnoMonasteries is a growing community dedicated to supporting open knowledge,
+                public goods, and meaningful technical work.
               </p>
-
               <div className="team-members">
-                <div className="team-member">
-                  <h3>Damien Sinclair</h3>
-                  <p className="role">Founder &amp; Visionary</p>
-                  <p>
-                    Damien brings together his passion for technology, community building, and
-                    social impact to create spaces where innovation serves the common good.
-                  </p>
-                </div>
-
-                <div className="team-member">
-                  <h3>Community Contributors</h3>
-                  <p className="role">The Heart of TechnoMonasteries</p>
-                  <p>
-                    Our community is powered by dedicated volunteers, members, and supporters who
-                    bring diverse skills, perspectives, and experiences to our shared mission.
-                  </p>
-                </div>
+                <ul className="calligraphy-list">
+                  <li>
+                    <strong>Tiffany Lawrence:</strong> Co-founder focused on open-source
+                    sustainability and long-term stewardship of public-interest technology.
+                  </li>
+                  <li>
+                    <strong>Frederic Pichon:</strong> Co-founder guiding the project’s architectural
+                    and artistic direction.
+                  </li>
+                  <li>
+                    <strong>Guido Gerletti:</strong> Advisor, brings expertise in biology, community
+                    building, and fundraising to support the mission.
+                  </li>
+                </ul>
               </div>
             </section>
 
@@ -172,14 +173,9 @@ const AboutPage: React.FC = () => {
                 with us on Discord to participate in discussions, find collaboration opportunities,
                 and stay updated on our progress.
               </p>
-              <div className="button-container">
-                <a
-                  href="https://discord.gg/your-discord-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gildedButton"
-                >
-                  Join Our Discord
+              <div style={{ textAlign: 'center' }}>
+                <a href="https://discord.gg/T8dxSgZS2J" target="_blank" rel="noopener noreferrer">
+                  <button className="gildedButton">Join our Discord</button>
                 </a>
               </div>
             </section>
