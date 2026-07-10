@@ -14,7 +14,9 @@ interface DataLayerEvent {
 // components use to reopen the modal.
 declare global {
   interface Window {
-    dataLayer: DataLayerEvent[]
+    // Entries are either our custom events or the `arguments` object pushed by
+    // the Consent Mode gtag() shim, so the array is not purely DataLayerEvent.
+    dataLayer: Array<DataLayerEvent | IArguments>
     gtag?: (...args: unknown[]) => void
     openCookiePreferences?: () => void
   }
