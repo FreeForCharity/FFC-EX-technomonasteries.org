@@ -21,6 +21,12 @@ updates:
       - dependency-name: 'eslint'
         update-types:
           - 'version-update:semver-major'
+      # TypeScript 7.x (the native/Go port) is not yet compatible with the
+      # pinned Next.js toolchain and breaks `next build`. Stay on 6.x until
+      # Next.js supports it; bump this deliberately, not automatically.
+      - dependency-name: 'typescript'
+        update-types:
+          - 'version-update:semver-major'
     groups:
       # Group all npm production dependencies together
       # Note: Major version updates are excluded and handled individually
