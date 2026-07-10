@@ -102,6 +102,18 @@ export default function RootLayout({
         {/* Preload critical LCP image */}
         <link rel="preload" as="image" href={`${basePath}/img/showcase.png`} fetchPriority="high" />
 
+        {/* Google Consent Mode v2 defaults - runs before GTM so tags honor
+            consent. Everything non-essential defaults to "denied"; the cookie
+            banner upgrades these via gtag('consent','update', ...). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+            `,
+          }}
+        />
         <GoogleTagManager />
       </head>
       <body

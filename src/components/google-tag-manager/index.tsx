@@ -9,7 +9,9 @@ const GTM_ID = analyticsConfig.gtmId
 export default function GoogleTagManager() {
   return (
     <>
-      {/* Google Tag Manager Script - loaded with lazyOnload for better performance */}
+      {/* Google Tag Manager Script - loaded with lazyOnload for better performance.
+          Consent Mode v2 defaults are set by an inline script in the document
+          <head> (see app/layout.tsx) so they run before this container loads. */}
       <Script
         id="gtm-script"
         strategy="lazyOnload"
