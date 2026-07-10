@@ -82,8 +82,13 @@ const HomePage: React.FC = () => {
               progress, share ideas, and help shape the first Techno-Monastery.
             </p>
             <div style={{ textAlign: 'center' }}>
-              <a href="https://discord.gg/T8dxSgZS2J" target="_blank" rel="noopener noreferrer">
-                <button className="gildedButton">Join our Discord</button>
+              <a
+                className="gildedButton"
+                href="https://discord.gg/T8dxSgZS2J"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join our Discord
               </a>
             </div>
           </div>

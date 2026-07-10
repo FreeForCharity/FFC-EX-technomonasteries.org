@@ -93,7 +93,7 @@ const SigelPaPage: React.FC = () => {
                 ['Site', '~70 acres of farmland and woodland'],
                 ['Arrangement', 'Nonprofit partnership with charity lease'],
               ].map(([label, value]) => (
-                <tr key={label} style={{ borderBottom: '1px solid var(--brown)' }}>
+                <tr key={label} style={{ borderBottom: '1px solid var(--line-color)' }}>
                   <th
                     scope="row"
                     style={{ padding: '8px', fontWeight: 'bold', width: '35%', textAlign: 'left' }}

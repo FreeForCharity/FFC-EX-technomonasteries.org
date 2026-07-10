@@ -79,7 +79,7 @@ const NederlandCoPage: React.FC = () => {
                 ['Wildfire Zone', 'Boulder County Zone 1 (HIGH risk)'],
                 ['Est. Phase 1 Cost', '$2,000,000-$3,500,000'],
               ].map(([label, value]) => (
-                <tr key={label} style={{ borderBottom: '1px solid var(--brown)' }}>
+                <tr key={label} style={{ borderBottom: '1px solid var(--line-color)' }}>
                   <th
                     scope="row"
                     style={{ padding: '8px', fontWeight: 'bold', width: '35%', textAlign: 'left' }}

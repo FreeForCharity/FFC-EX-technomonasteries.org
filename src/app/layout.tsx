@@ -9,6 +9,11 @@ import { Modern_Antiqua } from 'next/font/google'
 
 // Get basePath for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+const globalAssetVars = {
+  '--body-tile-url': `url('${basePath}/img/bodyTile.jpg')`,
+  '--booklet-tile-url': `url('${basePath}/img/bookletTile.jpg')`,
+  '--gold-button-url': `url('${basePath}/img/goldBtn.png')`,
+} as React.CSSProperties
 
 const modernAntiqua = Modern_Antiqua({
   weight: '400',
@@ -57,7 +62,7 @@ export const metadata: Metadata = {
       'Modern sanctuaries for open-source developers, researchers, and creators to focus on deep work and collaboration.',
     images: [
       {
-        url: '/img/logo.png',
+        url: `${basePath}/img/logo.png`,
         width: 800,
         height: 600,
         alt: 'Techno-Monasteries',
@@ -70,7 +75,7 @@ export const metadata: Metadata = {
     title: 'Techno-Monasteries | A Sanctuary for Open-Source',
     description:
       'Modern sanctuaries for open-source developers, researchers, and creators to focus on deep work and collaboration.',
-    images: ['/img/logo.png'],
+    images: [`${basePath}/img/logo.png`],
   },
   icons: {
     icon: [{ url: `${basePath}/img/favicon.png`, type: 'image/png', sizes: '32x32' }],
@@ -106,11 +111,12 @@ export default function RootLayout({
           novaFlat.variable,
           modernAntiqua.variable,
         ].join(' ')}
+        style={globalAssetVars}
         suppressHydrationWarning={true}
       >
         <GoogleTagManagerNoScript />
         <div className="booklet-page">
-          <div className="booklet-frame ">
+          <div className="booklet-frame">
             <Header />
             {children}
             <Footer />
