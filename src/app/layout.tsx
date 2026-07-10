@@ -6,6 +6,7 @@ import CookieConsent from './../components/cookie-consent'
 import GoogleTagManager, { GoogleTagManagerNoScript } from './../components/google-tag-manager'
 import { metamorphous, novaFlat } from '@/lib/fonts'
 import { Modern_Antiqua } from 'next/font/google'
+import { siteUrl } from '@/lib/site.config'
 
 // Get basePath for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
@@ -22,7 +23,7 @@ const modernAntiqua = Modern_Antiqua({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://technomonasteries.org'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Techno-Monasteries | A Sanctuary for Open-Source',
     template: '%s | Techno-Monasteries',
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://technomonasteries.org/',
+    url: `${siteUrl}/`,
     siteName: 'Techno-Monasteries',
     title: 'Techno-Monasteries | A Sanctuary for Open-Source',
     description:
