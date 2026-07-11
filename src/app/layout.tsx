@@ -107,6 +107,7 @@ export default function RootLayout({
             consent. Everything non-essential defaults to "denied"; the cookie
             banner upgrades these via gtag('consent','update', ...). */}
         <script
+          id="gtm-consent-default"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
