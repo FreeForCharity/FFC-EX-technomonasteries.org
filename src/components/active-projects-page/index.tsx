@@ -41,9 +41,9 @@ const ActiveProjectsPage: React.FC = () => {
               border: '2px solid var(--line-color)',
             }}
           >
-            <div className="pageSectionTitle" style={{ marginBottom: '10px' }}>
+            <h2 className="pageSectionTitle" style={{ marginBottom: '10px' }}>
               Sigel, Pennsylvania
-            </div>
+            </h2>
             <p
               style={{
                 textAlign: 'center',
@@ -135,9 +135,9 @@ const ActiveProjectsPage: React.FC = () => {
               border: '2px solid var(--line-color)',
             }}
           >
-            <div className="pageSectionTitle" style={{ marginBottom: '10px' }}>
+            <h2 className="pageSectionTitle" style={{ marginBottom: '10px' }}>
               Nederland, Colorado
-            </div>
+            </h2>
             <p
               style={{
                 textAlign: 'center',
@@ -225,7 +225,7 @@ const ActiveProjectsPage: React.FC = () => {
         {/* How We Evaluate */}
         <br />
         <br />
-        <div className="pageSectionTitle">How We Evaluate Properties</div>
+        <h2 className="pageSectionTitle">How We Evaluate Properties</h2>
         <p>
           Every candidate property is scored against a standardized framework covering seven
           categories: location and accessibility, zoning and land use, cost structure,
@@ -250,7 +250,7 @@ const ActiveProjectsPage: React.FC = () => {
         {/* Timeline */}
         <br />
         <br />
-        <div className="pageSectionTitle">Roadmap</div>
+        <h2 className="pageSectionTitle">Roadmap</h2>
         <div
           style={{
             width: '100%',
@@ -296,7 +296,7 @@ const ActiveProjectsPage: React.FC = () => {
         {/* Get Involved */}
         <br />
         <br />
-        <div className="pageSectionTitle">Get Involved</div>
+        <h2 className="pageSectionTitle">Get Involved</h2>
         <p>
           This is an open project. Whether you&apos;re a developer who might want to live at a
           Techno-Monastery, a researcher with expertise in intentional communities, or someone who

@@ -21,7 +21,7 @@ const CoHousingPage: React.FC = () => {
           ← Back to Economic Models
         </Link>
 
-        <div className="pageSectionTitle">Private Lives, Shared Purpose</div>
+        <h2 className="pageSectionTitle">Private Lives, Shared Purpose</h2>
 
         {/* History */}
         <div className="economic-section">

@@ -111,7 +111,7 @@ export default function CookiePolicy() {
 
           {/* Microsoft Forms */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h4 className="font-semibold mb-2 text-[#333]">Microsoft Forms</h4>
+            <h3 className="font-semibold mb-2 text-[#333]">Microsoft Forms</h3>
             <p className="text-sm mb-2 text-[#666]">
               Used for our charity application form. Microsoft Forms may load additional third-party
               services (including HubSpot) for form analytics and feedback collection. These
@@ -168,7 +168,7 @@ export default function CookiePolicy() {
 
           {/* Zeffy */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h4 className="font-semibold mb-2 text-[#333]">Zeffy Donation Platform</h4>
+            <h3 className="font-semibold mb-2 text-[#333]">Zeffy Donation Platform</h3>
             <p className="text-sm mb-2 text-[#666]">
               Zero-fee donation processing platform embedded on our website to accept donations.
             </p>
@@ -215,7 +215,7 @@ export default function CookiePolicy() {
 
           {/* Google Analytics */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h4 className="font-semibold mb-2 text-[#333]">Google Analytics</h4>
+            <h3 className="font-semibold mb-2 text-[#333]">Google Analytics</h3>
             <p className="text-sm mb-2 text-[#666]">
               Google Analytics is a web analytics service offered by Google that tracks and reports
               website traffic. We use Google Analytics to understand how users interact with our
@@ -264,7 +264,7 @@ export default function CookiePolicy() {
 
           {/* Microsoft Clarity */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h4 className="font-semibold mb-2 text-[#333]">Microsoft Clarity</h4>
+            <h3 className="font-semibold mb-2 text-[#333]">Microsoft Clarity</h3>
             <p className="text-sm mb-2 text-[#666]">
               Microsoft Clarity is a user behavior analytics tool that helps us understand how users
               interact with our website through session recordings and heatmaps.
@@ -317,7 +317,7 @@ export default function CookiePolicy() {
 
           {/* Meta Pixel */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h4 className="font-semibold mb-2 text-[#333]">Meta Pixel (Facebook Pixel)</h4>
+            <h3 className="font-semibold mb-2 text-[#333]">Meta Pixel (Facebook Pixel)</h3>
             <p className="text-sm mb-2 text-[#666]">
               The Meta Pixel is an analytics tool that helps us measure the effectiveness of
               advertising by understanding the actions people take on our website.

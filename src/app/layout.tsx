@@ -117,6 +117,35 @@ export default function RootLayout({
           }}
         />
         <GoogleTagManager />
+
+        {/* Structured data for search engines / rich results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': `${siteUrl}/#organization`,
+                  name: 'Techno-Monasteries',
+                  url: siteUrl,
+                  logo: `${siteUrl}/img/logo.png`,
+                  description:
+                    'Modern sanctuaries for open-source developers, researchers, and creators to focus on deep work and collaboration.',
+                  sameAs: ['https://x.com/TechMonasteries'],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': `${siteUrl}/#website`,
+                  url: siteUrl,
+                  name: 'Techno-Monasteries',
+                  publisher: { '@id': `${siteUrl}/#organization` },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         className={[
@@ -129,10 +158,13 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <GoogleTagManagerNoScript />
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <div className="booklet-page">
           <div className="booklet-frame">
             <Header />
-            {children}
+            <main id="main-content">{children}</main>
             <Footer />
             <CookieConsent />
           </div>
