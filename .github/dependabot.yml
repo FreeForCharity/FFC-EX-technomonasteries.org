@@ -21,6 +21,14 @@ updates:
       - dependency-name: 'eslint'
         update-types:
           - 'version-update:semver-major'
+      # Keep TypeScript on 6.0.x patch releases only. 7.x (the native/Go port)
+      # breaks `next build` on the pinned Next.js, and 6.1.x would violate the
+      # @typescript-eslint peer range (typescript >=4.8.4 <6.1.0). Widen this
+      # deliberately once the toolchain supports a newer range.
+      - dependency-name: 'typescript'
+        update-types:
+          - 'version-update:semver-major'
+          - 'version-update:semver-minor'
     groups:
       # Group all npm production dependencies together
       # Note: Major version updates are excluded and handled individually
