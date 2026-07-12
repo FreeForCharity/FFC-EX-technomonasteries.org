@@ -111,6 +111,7 @@ const Footer: React.FC = () => {
         <a
           href="https://freeforcharity.org"
           className="footer-legal-link"
+          style={linkTap}
           target="_blank"
           rel="noopener noreferrer"
         >

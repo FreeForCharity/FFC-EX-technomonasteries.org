@@ -1,37 +1,40 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
+import { assetPath } from '@/lib/assetPath'
 
 const HomePage: React.FC = () => {
   return (
     <>
-      {/* Showcase */}
+      {/* Showcase. Explicit width/height reserve the aspect ratio to avoid
+          layout shift; assetPath keeps images correct under basePath deploys. */}
       <div className="showcase">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           className="showcaseImg"
-          src="/img/showcase.png"
+          src={assetPath('/img/showcase.png')}
           alt="Illustration of a Romanesque monastery building representing a Techno-Monastery"
           width={603}
           height={418}
-          priority
-          sizes="(max-width: 768px) 100vw, 750px"
+          fetchPriority="high"
         />
         <div
           className="showcase-nav"
           style={{ width: '96%', margin: 'auto', position: 'absolute', top: '3%', left: '2%' }}
         >
-          <Image
-            src="/img/logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={assetPath('/img/logo.png')}
             alt="Techno-Monasteries logo"
             className="showcase-nav-img"
             width={528}
             height={514}
             style={{ float: 'left' }}
           />
-          <Image
-            src="/img/Wells_clock_exterior.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={assetPath('/img/Wells_clock_exterior.png')}
             alt="Astronomical clock, evoking timeless craftsmanship"
             className="showcase-nav-img"
             width={838}
