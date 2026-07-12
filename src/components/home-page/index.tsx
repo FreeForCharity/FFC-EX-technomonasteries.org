@@ -1,29 +1,44 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
 import { assetPath } from '@/lib/assetPath'
 
 const HomePage: React.FC = () => {
   return (
     <>
-      {/* Showcase */}
+      {/* Showcase. Explicit width/height reserve the aspect ratio to avoid
+          layout shift; assetPath keeps images correct under basePath deploys. */}
       <div className="showcase">
-        <img className="showcaseImg" src={assetPath('/img/showcase.png')} alt="Showcase" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="showcaseImg"
+          src={assetPath('/img/showcase.png')}
+          alt="Illustration of a Romanesque monastery building representing a Techno-Monastery"
+          width={603}
+          height={418}
+          fetchPriority="high"
+        />
         <div
           className="showcase-nav"
           style={{ width: '96%', margin: 'auto', position: 'absolute', top: '3%', left: '2%' }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={assetPath('/img/logo.png')}
-            alt="Logo"
+            alt="Techno-Monasteries logo"
             className="showcase-nav-img"
+            width={528}
+            height={514}
             style={{ float: 'left' }}
           />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={assetPath('/img/Wells_clock_exterior.png')}
-            alt="Wells Clock"
+            alt="Astronomical clock, evoking timeless craftsmanship"
             className="showcase-nav-img"
+            width={838}
+            height={800}
             style={{ float: 'right' }}
           />
         </div>
@@ -32,9 +47,33 @@ const HomePage: React.FC = () => {
       {/* Main Content */}
       <div className="mainContent">
         <h1 className="pageTitle">A Home of Open Innovation</h1>
+
+        {/* Primary calls-to-action, above the fold */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '12px',
+            justifyContent: 'center',
+            marginBottom: '24px',
+          }}
+        >
+          <a
+            className="gildedButton"
+            href="https://discord.gg/T8dxSgZS2J"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join our Discord
+          </a>
+          <Link className="gildedButton" href="/project/sigel-pa">
+            See the Pilot Project
+          </Link>
+        </div>
+
         <div>
           <div className="Journey">
-            <div className="pageSectionTitle">The Journey</div>
+            <h2 className="pageSectionTitle">The Journey</h2>
             <p>
               Throughout history, seekers of knowledge—Pythagoras in Egypt, Fibonacci in North
               Africa, and the scholars of the Silk Road—traveled between monasteries, libraries, and
@@ -48,7 +87,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="problem">
-            <div className="pageSectionTitle">The Problem</div>
+            <h2 className="pageSectionTitle">The Problem</h2>
             <p>Many open-source and public-good builders face the same recurring problems:</p>
             <ul className="calligraphy-list">
               <li>Critical open-source infrastructure is often maintained with little support.</li>
@@ -63,7 +102,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="life">
-            <div className="pageSectionTitle">Inside a Techno-Monastery</div>
+            <h2 className="pageSectionTitle">Inside a Techno-Monastery</h2>
             <p>
               Techno-Monasteries offer temporary accommodations and dedicated workspaces for
               builders and technical teams. Designed around deep work, these spaces balance
@@ -74,7 +113,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="cloister">
-            <div className="pageSectionTitle">Join the First Build</div>
+            <h2 className="pageSectionTitle">Join the First Build</h2>
             <p>
               Techno-Monasteries is still in its early stages, and the first location in
               Pennsylvania is beginning to take shape. We’re building the community, refining the

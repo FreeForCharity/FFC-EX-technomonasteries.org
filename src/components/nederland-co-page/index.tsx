@@ -42,7 +42,7 @@ const NederlandCoPage: React.FC = () => {
 
         {/* Key Facts */}
         <br />
-        <div className="pageSectionTitle">Key Facts</div>
+        <h2 className="pageSectionTitle">Key Facts</h2>
         <div style={{ width: '100%', overflowX: 'auto' }}>
           <table
             style={{
@@ -95,7 +95,7 @@ const NederlandCoPage: React.FC = () => {
 
         {/* Why Nederland */}
         <br />
-        <div className="pageSectionTitle">Why Nederland</div>
+        <h2 className="pageSectionTitle">Why Nederland</h2>
         <p>
           <strong>Fiber Internet:</strong> Quantum Fiber already covers 26% of Nederland with speeds
           up to 8 Gbps. Maverix Broadband recently secured an $8.67 million grant to expand fiber
@@ -116,7 +116,7 @@ const NederlandCoPage: React.FC = () => {
 
         {/* Challenges */}
         <br />
-        <div className="pageSectionTitle">Honest Challenges</div>
+        <h2 className="pageSectionTitle">Honest Challenges</h2>
         <p>
           <strong>Cost:</strong> Land near Nederland runs $240,000-$330,000 per acre — fifteen to
           twenty times more than Sigel, PA. Mountain construction adds a 20-40% premium on top of
@@ -142,7 +142,7 @@ const NederlandCoPage: React.FC = () => {
 
         {/* Design Concept */}
         <br />
-        <div className="pageSectionTitle">Design Concept</div>
+        <h2 className="pageSectionTitle">Design Concept</h2>
         <div
           style={{
             fontFamily: 'sans-serif',
@@ -173,7 +173,7 @@ const NederlandCoPage: React.FC = () => {
 
         {/* Get Involved */}
         <br />
-        <div className="pageSectionTitle">Get Involved</div>
+        <h2 className="pageSectionTitle">Get Involved</h2>
         <p>
           Interested in the Nederland project? We&apos;re especially looking for people in the
           Boulder/Denver area, architects experienced with mountain construction, Colorado water

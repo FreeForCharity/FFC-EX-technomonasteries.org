@@ -18,7 +18,7 @@ test.describe('Image Loading', () => {
 
     // Find the logo and showcase images
     const showcaseLogo = page.locator(`img[alt="${testConfig.logo.showcaseAlt}"]`)
-    const showcaseImage = page.locator('img[alt="Showcase"]')
+    const showcaseImage = page.locator(`img[alt="${testConfig.logo.showcaseImageAlt}"]`)
 
     // Verify both images are visible (meaning they loaded successfully)
     await expect(showcaseLogo).toBeVisible()
@@ -50,7 +50,7 @@ test.describe('Image Loading', () => {
     await page.goto('/')
 
     // Wait for showcase image to be visible
-    const showcaseImage = page.locator('img[alt="Showcase"]')
+    const showcaseImage = page.locator(`img[alt="${testConfig.logo.showcaseImageAlt}"]`)
     await expect(showcaseImage).toBeVisible()
 
     // Verify at least one image request was made for the showcase image
@@ -70,7 +70,7 @@ test.describe('Image Loading', () => {
     await page.goto('/')
 
     // Find the showcase image
-    const showcaseImage = page.locator('img[alt="Showcase"]')
+    const showcaseImage = page.locator(`img[alt="${testConfig.logo.showcaseImageAlt}"]`)
 
     // Wait for the image to be visible
     await expect(showcaseImage).toBeVisible()

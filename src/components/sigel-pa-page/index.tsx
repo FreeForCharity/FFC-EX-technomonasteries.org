@@ -43,7 +43,7 @@ const SigelPaPage: React.FC = () => {
 
         {/* The Property */}
         <br />
-        <div className="pageSectionTitle">The Property</div>
+        <h2 className="pageSectionTitle">The Property</h2>
         <p>
           The project site consists of roughly 70 acres of farmland and woodland. It includes an
           existing farmhouse and pastureland maintained by our local nonprofit partner; during the
@@ -55,7 +55,7 @@ const SigelPaPage: React.FC = () => {
 
         {/* Key Facts */}
         <br />
-        <div className="pageSectionTitle">Key Facts</div>
+        <h2 className="pageSectionTitle">Key Facts</h2>
         <div style={{ width: '100%', overflowX: 'auto' }}>
           <table
             style={{
@@ -109,7 +109,7 @@ const SigelPaPage: React.FC = () => {
 
         {/* Partnership & Charity Lease */}
         <br />
-        <div className="pageSectionTitle">Partnership &amp; Charity Lease</div>
+        <h2 className="pageSectionTitle">Partnership &amp; Charity Lease</h2>
         <p>
           Rather than purchasing property outright, the project is structured as a partnership with
           a local nonprofit under a long-term charity lease. This approach lets us start building
@@ -125,7 +125,7 @@ const SigelPaPage: React.FC = () => {
 
         {/* Current Phase */}
         <br />
-        <div className="pageSectionTitle">Current Phase</div>
+        <h2 className="pageSectionTitle">Current Phase</h2>
         <p>
           The project is currently focused on planning and evaluation: preliminary site planning,
           utility and septic evaluation, volunteer coordination, nonprofit structuring,
@@ -136,7 +136,7 @@ const SigelPaPage: React.FC = () => {
 
         {/* Phased Build */}
         <br />
-        <div className="pageSectionTitle">Phased Build-Out</div>
+        <h2 className="pageSectionTitle">Phased Build-Out</h2>
         <div
           style={{
             fontFamily: 'sans-serif',
@@ -163,7 +163,7 @@ const SigelPaPage: React.FC = () => {
 
         {/* Challenges */}
         <br />
-        <div className="pageSectionTitle">Honest Challenges</div>
+        <h2 className="pageSectionTitle">Honest Challenges</h2>
         <p>
           <strong>Internet:</strong> There is no fiber in the Sigel area. Starlink (50-200 Mbps) is
           the primary option today. However, the USDA ReConnect program has $90 million in FY2026
@@ -182,7 +182,7 @@ const SigelPaPage: React.FC = () => {
 
         {/* Get Involved */}
         <br />
-        <div className="pageSectionTitle">Get Involved</div>
+        <h2 className="pageSectionTitle">Get Involved</h2>
         <p>
           Interested in the Sigel project? We&apos;re looking for people with skills in
           construction, permaculture, off-grid energy, community organizing, and of course —

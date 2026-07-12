@@ -110,7 +110,7 @@ body {
   width: 100%;
 }
 
-.header h1 {
+.header .siteTitle {
   font-size: 4.8rem;
   line-height: 1;
   color: var(--ink);
@@ -485,6 +485,39 @@ h2.faq-section {
   border-bottom: 1px solid var(--ink);
 }
 
+.navbar-link.active {
+  border-bottom: 2px solid var(--ink);
+  font-weight: 700;
+}
+
+/* Skip-to-content link: visually hidden until focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--ink, #2b2b2b);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.footer-legal-link {
+  color: var(--ink);
+  text-decoration: underline;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+}
+
+.footer-legal-link:hover {
+  text-decoration: none;
+}
+
 .circleBtn {
   cursor: pointer;
   position: relative;
@@ -507,7 +540,7 @@ h2.faq-section {
   .booklet-page {
     margin: 0%;
   }
-  .header h1 {
+  .header .siteTitle {
     font-size: 4.1rem;
   }
   .tagline {
@@ -554,7 +587,7 @@ h2.faq-section {
     border-color: #b1a790;
     margin: 1px;
   }
-  .header h1 {
+  .header .siteTitle {
     font-size: 2.5rem;
   }
   .tagline {
@@ -596,7 +629,7 @@ h2.faq-section {
     padding: 5%;
     margin: 0px;
   }
-  .header h1 {
+  .header .siteTitle {
     font-size: 2rem;
   }
   .tagline {

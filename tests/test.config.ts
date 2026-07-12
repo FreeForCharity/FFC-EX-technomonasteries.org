@@ -98,8 +98,10 @@ export const testConfig = {
    * Used in: tests/logo.spec.ts
    */
   logo: {
-    showcaseAlt: 'Logo',
+    showcaseAlt: 'Techno-Monasteries logo',
     logoPath: '/img/logo.png',
+    showcaseImageAlt:
+      'Illustration of a Romanesque monastery building representing a Techno-Monastery',
   },
 
   /**

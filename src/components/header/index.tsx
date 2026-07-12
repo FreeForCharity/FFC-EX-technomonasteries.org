@@ -2,41 +2,52 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const NAV_LINKS = [
+  { href: '/', label: 'Home' },
+  { href: '/project', label: 'Project' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/about', label: 'About' },
+  { href: '/economic-models', label: 'Economic Models' },
+]
 
 const Header: React.FC = () => {
+  const pathname = usePathname()
+
   return (
-    <>
+    <header>
       <nav
+        aria-label="Primary"
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           justifyContent: 'center',
-          gap: '20px',
+          gap: '8px 20px',
           marginBottom: '15px',
         }}
       >
-        <Link href="/" className="navbar-link">
-          Home
-        </Link>
-        <Link href="/project" className="navbar-link">
-          Project
-        </Link>
-        <Link href="/faq" className="navbar-link">
-          FAQ
-        </Link>
-        <Link href="/about" className="navbar-link">
-          About
-        </Link>
-        <Link href="/economic-models" className="navbar-link">
-          Economic Models
-        </Link>
+        {NAV_LINKS.map(({ href, label }) => {
+          const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href)
+          return (
+            <Link
+              key={href}
+              href={href}
+              className={`navbar-link${isActive ? ' active' : ''}`}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              {label}
+            </Link>
+          )
+        })}
       </nav>
-      {/* Header with logo, title and tagline */}
+      {/* Site identity: wordmark + tagline (branding, not page headings) */}
       <div className="header">
-        <h1>TECHNO MONASTERIES</h1>
-        <h2 className="tagline">A Sanctuary for Open-Source</h2>
+        <div className="siteTitle">TECHNO MONASTERIES</div>
+        <p className="tagline">A Sanctuary for Open-Source</p>
       </div>
       <hr className="horizontalLine" style={{ margin: '0px auto 15px auto' }} />
-    </>
+    </header>
   )
 }
 
