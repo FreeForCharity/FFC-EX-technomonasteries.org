@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import { updateGoogleConsent } from '@/lib/consent-mode'
 
 // Define type for GTM dataLayer events
 interface DataLayerEvent {
@@ -43,31 +44,54 @@ export default function CookieConsent() {
   const modalRef = useRef<HTMLDivElement>(null)
   const previousFocusRef = useRef<HTMLElement | null>(null)
 
-  const deleteAnalyticsCookies = useCallback(() => {
-    // List of static cookie names to delete
-    const cookiesToDelete = ['_ga', '_gid', '_fbp', 'fr', '_clck', '_clsk']
+  const expireCookies = useCallback((names: string[]) => {
+    // A cookie can only be deleted by a request whose domain attribute
+    // MATCHES the one it was set with. GA4 scopes `_ga` to the registrable
+    // domain with a leading dot (e.g. `.example.org`) so it is readable
+    // across subdomains — expiring it with only the bare hostname silently
+    // does nothing and the visitor keeps the identifier they just asked us
+    // to drop.
+    //
+    // Best-effort candidate set, no public-suffix list needed: walk up the
+    // hostname's labels and try every suffix that keeps at least two
+    // labels, each with and without a leading dot, plus the host-only
+    // form. Candidates that happen to be public suffixes (e.g. `co.uk`)
+    // are harmless no-ops — browsers reject cookie writes (and therefore
+    // expirations) scoped to a public suffix.
+    const labels = window.location.hostname.split('.')
+    const domains = new Set<string>()
+    for (let i = 0; i < labels.length - 1; i++) {
+      const suffix = labels.slice(i).join('.')
+      domains.add(suffix)
+      domains.add(`.${suffix}`)
+    }
 
-    // Delete static cookies
-    cookiesToDelete.forEach((name) => {
-      // Delete for current domain
-      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-      // Also try to delete with domain specification
-      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`
+    names.forEach((name) => {
+      const expiry = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+      // Host-only (no domain attribute).
+      document.cookie = expiry
+      domains.forEach((domain) => {
+        document.cookie = `${expiry} domain=${domain};`
+      })
     })
+  }, [])
+
+  // Deletes both analytics (GA4, Clarity) and marketing (Meta Pixel)
+  // cookies — it runs on any withdrawal, so the name says "tracking",
+  // not "analytics".
+  const deleteTrackingCookies = useCallback(() => {
+    // Static cookie names: GA4, Meta Pixel, Microsoft Clarity
+    expireCookies(['_ga', '_gid', '_fbp', 'fr', '_clck', '_clsk'])
 
     // Dynamically delete all cookies matching _ga_* (e.g., _ga_G-XXXXXXXXXX)
     if (typeof document !== 'undefined') {
-      document.cookie.split(';').forEach((cookie) => {
-        const cookieName = cookie.split('=')[0].trim()
-        if (cookieName.startsWith('_ga_')) {
-          // Delete for current domain
-          document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-          // Also try to delete with domain specification
-          document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`
-        }
-      })
+      const dynamicNames = document.cookie
+        .split(';')
+        .map((cookie) => cookie.split('=')[0].trim())
+        .filter((cookieName) => cookieName.startsWith('_ga_'))
+      expireCookies(dynamicNames)
     }
-  }, [])
+  }, [expireCookies])
 
   const applyConsent = useCallback(
     (prefs: CookiePreferences, previousPrefs?: CookiePreferences) => {
@@ -83,20 +107,19 @@ export default function CookieConsent() {
           (previousPrefs.analytics && !prefs.analytics) ||
           (previousPrefs.marketing && !prefs.marketing)
         ) {
-          deleteAnalyticsCookies()
+          deleteTrackingCookies()
         }
       }
 
-      // Signal consent to Google Consent Mode v2 (tags in the GTM container
-      // gate on this) and push a custom event for any dataLayer-based triggers.
+      // Push the Google Consent Mode `update` mirroring this choice (tags in
+      // the GTM container gate on this). For an EEA/UK/CH visitor this is
+      // what lifts the regional denied default to granted; for everyone else
+      // it matters when they decline (storage flips to denied and GA4 falls
+      // back to cookieless pings). Then push a custom event for any
+      // dataLayer-based triggers.
       if (typeof window !== 'undefined') {
         window.dataLayer = window.dataLayer || []
-        window.gtag?.('consent', 'update', {
-          analytics_storage: prefs.analytics ? 'granted' : 'denied',
-          ad_storage: prefs.marketing ? 'granted' : 'denied',
-          ad_user_data: prefs.marketing ? 'granted' : 'denied',
-          ad_personalization: prefs.marketing ? 'granted' : 'denied',
-        })
+        updateGoogleConsent(prefs)
         window.dataLayer.push({
           event: 'consent_update',
           functional_consent: prefs.functional ? 'granted' : 'denied',
@@ -105,7 +128,7 @@ export default function CookieConsent() {
         })
       }
     },
-    [deleteAnalyticsCookies]
+    [deleteTrackingCookies]
   )
 
   // Helper to load preferences from localStorage and update state
@@ -246,7 +269,7 @@ export default function CookieConsent() {
     }
 
     // Delete third-party cookies when consent is withdrawn
-    deleteAnalyticsCookies()
+    deleteTrackingCookies()
 
     applyConsent(onlyNecessary, savedPreferencesBackup)
     setSavedPreferencesBackup(onlyNecessary)
