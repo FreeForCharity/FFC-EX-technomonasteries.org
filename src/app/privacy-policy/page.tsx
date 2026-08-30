@@ -359,10 +359,12 @@ export default function PrivacyPolicy() {
               <strong>Consent:</strong> In the EEA, the UK, and Switzerland, Google&apos;s tags set
               no cookies and read no identifiers until you accept through the cookie consent banner
               — until then only aggregate, cookieless measurement takes place. Session recording
-              (Microsoft Clarity) and marketing (Meta Pixel) load only after you opt in. You can
-              withdraw consent at any time via the Cookie Preferences link in the footer; this site
-              then deletes the tracking cookies it set, Google&apos;s tags return to the cookieless
-              state, and Clarity and the Meta Pixel stop loading from your next page view.
+              (Microsoft Clarity) and marketing (Meta Pixel) are not loaded by this site&apos;s code
+              directly; any delivery through our Tag Manager container requires your explicit
+              opt-in. You can withdraw consent at any time via the Cookie Preferences link in the
+              footer; this site then deletes the tracking cookies it set, Google&apos;s tags return
+              to the cookieless state, and the container stops running consent-gated tags from your
+              next page view.
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Legitimate interests:</strong> Operating, securing, and improving this website
@@ -428,7 +430,8 @@ export default function PrivacyPolicy() {
             automatically for visitors outside the EEA, the UK, and Switzerland; any visitor can
             turn them off at any time via the Cookie Preferences link in the footer, and we delete
             the cookies when you do. Session recording (Microsoft Clarity) and marketing (Meta
-            Pixel) never load without your explicit opt-in, anywhere in the world.
+            Pixel) are not loaded by this site&apos;s code directly; any delivery through our Tag
+            Manager container requires your explicit opt-in, anywhere in the world.
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             <strong>Exercising your rights.</strong> Submit a request to{' '}

@@ -232,9 +232,11 @@ export default function CookiePolicy() {
             </p>
             <p className="text-sm text-[#666]">
               <strong>Microsoft Clarity is different.</strong> It records how visitors move through
-              pages, so it runs <strong>only if you explicitly accept</strong> analytics cookies —
-              everywhere in the world, not just in Europe. Declining, or simply not answering the
-              banner, keeps it off.
+              pages, so we treat it as <strong>strictly opt-in</strong> — everywhere in the world,
+              not just in Europe. This site&apos;s code does not load Clarity directly: it can only
+              be delivered through our Tag Manager container, which receives your consent choice and
+              is configured to run it only after you explicitly accept analytics cookies. Declining,
+              or simply not answering the banner, keeps it off.
             </p>
           </div>
 
@@ -337,8 +339,10 @@ export default function CookiePolicy() {
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             These cookies are used to track visitors across websites. The intention is to display
             ads that are relevant and engaging for users and thereby more valuable for publishers
-            and advertisers. The Meta Pixel loads only after you explicitly enable marketing cookies
-            through the consent banner — everywhere in the world, in every region.
+            and advertisers. This site&apos;s code does not load the Meta Pixel directly: it can
+            only be delivered through our Tag Manager container, which receives your consent choice
+            and is configured to run marketing tags only after you explicitly enable marketing
+            cookies through the consent banner — everywhere in the world, in every region.
           </p>
 
           {/* Meta Pixel */}
@@ -495,7 +499,8 @@ export default function CookiePolicy() {
             Switzerland, analytics cookies stay off until you opt in through the consent banner;
             everywhere else they are set from your first visit, and you can turn them off at any
             time via the Cookie Preferences link in the footer — we delete the cookies when you do.
-            Session recording (Microsoft Clarity) and marketing (Meta Pixel) never load without your
+            Session recording (Microsoft Clarity) and marketing (Meta Pixel) are not loaded by this
+            site&apos;s code directly; any delivery through our Tag Manager container requires your
             explicit opt-in, anywhere in the world.
           </p>
 

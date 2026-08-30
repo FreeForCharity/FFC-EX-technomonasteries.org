@@ -25,10 +25,12 @@
 // address at request time — that is documented Consent Mode behavior for
 // the `region` parameter, and the policy pages state it in plain language.
 //
-// NON-Google tags do not speak Consent Mode, so they never get the
-// permissive default: Microsoft Clarity loads only on an explicit
-// analytics grant and Meta Pixel only on an explicit marketing grant —
-// everywhere, including the US. See src/components/cookie-consent.
+// NON-Google tags do not speak Consent Mode, so they must never ride the
+// permissive default. This site's code ships no direct Clarity or Meta
+// Pixel loaders — every tag is delivered through the GTM container, and
+// any non-Google tag placed there must be gated in GTM on the consent
+// state the banner publishes (the Consent Mode signals plus the
+// `consent_update` dataLayer event — see src/components/cookie-consent).
 //
 // `wait_for_update` holds tags briefly so a returning EEA visitor's stored
 // choice is applied before the first hit fires, instead of the hit going
