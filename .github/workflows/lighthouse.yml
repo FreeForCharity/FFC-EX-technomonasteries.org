@@ -49,8 +49,9 @@ jobs:
 
       - name: Run Lighthouse CI
         run: |
-          npm install -g @lhci/cli
-          lhci autorun
+          # @lhci/cli is a devDependency — run the repo-pinned copy instead
+          # of a floating global install.
+          pnpm exec lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 

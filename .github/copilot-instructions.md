@@ -9,7 +9,7 @@ TechnoMonasteries is a Next.js 16.0.7 single-page static website exploring the i
 ### Environment Setup
 
 - **Node.js Version**: Requires Node.js 20.x (validated with v20.19.5)
-- **Package Manager**: Uses npm with pnpm-lock.yaml
+- **Package Manager**: pnpm 10 (pinned via `packageManager`; lockfile is pnpm-lock.yaml)
 
 ### Bootstrap and Build Process
 
