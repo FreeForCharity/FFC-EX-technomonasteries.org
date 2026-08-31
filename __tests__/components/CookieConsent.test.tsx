@@ -102,6 +102,16 @@ describe('CookieConsent component', () => {
 })
 
 describe('CookieConsent cookie deletion on apply', () => {
+  // Own the shared state rather than inheriting whatever ran before: the
+  // localStorage mock and document.cookie both persist across tests in this
+  // file, so without this the suite passes or fails depending on order.
+  beforeEach(() => {
+    localStorageMock.clear()
+    for (const name of ['_ga', '_gid', '_fbp', 'fr', '_clck', '_clsk']) {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    }
+  })
+
   it('deletes non-granted categories\u2019 cookies on load, even without a prior stored grant', async () => {
     // Under the regional Consent Mode defaults, Google tags can set cookies
     // BEFORE the visitor makes any choice (outside the EEA/UK/CH). Applying
