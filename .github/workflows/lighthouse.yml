@@ -45,7 +45,11 @@ jobs:
       - name: Build site
         run: pnpm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /technomonasteries.org
+          # Mirror deploy.yml exactly rather than hardcoding: the literal here was
+          # /technomonasteries.org, which is not this repository's name, so the
+          # audited build's asset URLs matched neither the deploy nor anything on
+          # disk. Deriving it keeps the two in step if the repo variable changes.
+          NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH || format('/{0}', github.event.repository.name) }}
 
       - name: Run Lighthouse CI
         run: |
