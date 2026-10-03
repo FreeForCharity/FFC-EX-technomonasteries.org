@@ -4,6 +4,7 @@ import Header from './../components/header'
 import Footer from './../components/footer'
 import CookieConsent from './../components/cookie-consent'
 import GoogleTagManager, { GoogleTagManagerNoScript } from './../components/google-tag-manager'
+import { CONSENT_MODE_BOOTSTRAP } from '@/lib/consent-mode'
 import { metamorphous, novaFlat } from '@/lib/fonts'
 import { Modern_Antiqua } from 'next/font/google'
 import { siteUrl } from '@/lib/site.config'
@@ -103,19 +104,14 @@ export default function RootLayout({
         {/* Preload critical LCP image */}
         <link rel="preload" as="image" href={`${basePath}/img/showcase.png`} fetchPriority="high" />
 
-        {/* Google Consent Mode v2 defaults - runs before GTM so tags honor
-            consent. Everything non-essential defaults to "denied"; the cookie
-            banner upgrades these via gtag('consent','update', ...). */}
-        <script
-          id="gtm-consent-default"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-              window.gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-            `,
-          }}
-        />
+        {/* Google Consent Mode v2 defaults — MUST run before any Google tag
+            (i.e. before the GoogleTagManager component below) so the global
+            consent defaults are already on the dataLayer when GTM/GA4
+            initialise. Denied worldwide: one unscoped default withholds
+            analytics and ad storage from every visitor until they opt in, so
+            there is no region left for Google to resolve from the visitor's IP
+            address. See src/lib/consent-mode.ts. */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_MODE_BOOTSTRAP }} />
         <GoogleTagManager />
 
         {/* Structured data for search engines / rich results */}

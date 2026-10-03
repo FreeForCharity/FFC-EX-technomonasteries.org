@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import { updateGoogleConsent } from '@/lib/consent-mode'
 
 // Define type for GTM dataLayer events
 interface DataLayerEvent {
@@ -43,60 +44,101 @@ export default function CookieConsent() {
   const modalRef = useRef<HTMLDivElement>(null)
   const previousFocusRef = useRef<HTMLElement | null>(null)
 
-  const deleteAnalyticsCookies = useCallback(() => {
-    // List of static cookie names to delete
-    const cookiesToDelete = ['_ga', '_gid', '_fbp', 'fr', '_clck', '_clsk']
-
-    // Delete static cookies
-    cookiesToDelete.forEach((name) => {
-      // Delete for current domain
-      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-      // Also try to delete with domain specification
-      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`
-    })
-
-    // Dynamically delete all cookies matching _ga_* (e.g., _ga_G-XXXXXXXXXX)
-    if (typeof document !== 'undefined') {
-      document.cookie.split(';').forEach((cookie) => {
-        const cookieName = cookie.split('=')[0].trim()
-        if (cookieName.startsWith('_ga_')) {
-          // Delete for current domain
-          document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-          // Also try to delete with domain specification
-          document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`
-        }
-      })
+  const expireCookies = useCallback((names: string[]) => {
+    // A cookie can only be deleted by a request whose domain attribute
+    // MATCHES the one it was set with. GA4 scopes `_ga` to the registrable
+    // domain with a leading dot (e.g. `.example.org`) so it is readable
+    // across subdomains — expiring it with only the bare hostname silently
+    // does nothing and the visitor keeps the identifier they just asked us
+    // to drop.
+    //
+    // Best-effort candidate set, no public-suffix list needed: walk up the
+    // hostname's labels and try every suffix that keeps at least two
+    // labels, each with and without a leading dot, plus the host-only
+    // form. Candidates that happen to be public suffixes (e.g. `co.uk`)
+    // are harmless no-ops — browsers reject cookie writes (and therefore
+    // expirations) scoped to a public suffix.
+    const labels = window.location.hostname.split('.')
+    const domains = new Set<string>()
+    for (let i = 0; i < labels.length - 1; i++) {
+      const suffix = labels.slice(i).join('.')
+      domains.add(suffix)
+      domains.add(`.${suffix}`)
     }
+
+    names.forEach((name) => {
+      const expiry = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+      // Host-only (no domain attribute).
+      document.cookie = expiry
+      domains.forEach((domain) => {
+        document.cookie = `${expiry} domain=${domain};`
+      })
+    })
   }, [])
 
+  // Expires the cookies of each category that is NOT granted in `prefs`.
+  // Analytics covers GA4 + Microsoft Clarity; marketing covers the Meta
+  // Pixel. Called with no argument it drops both categories — a full
+  // teardown no caller needs today, since applyConsent always passes the
+  // resulting preferences.
+  //
+  // Keyed on the RESULTING preference state rather than on what changed:
+  // withdrawing marketing alone must not wipe GA4/Clarity cookies while
+  // analytics consent still stands, and a first-time decline must still clear
+  // cookies that this site's earlier permissive bootstrap allowed to be set
+  // before any choice was stored.
+  //
+  // Only cookies scoped to THIS site's domain can be expired here — that
+  // is all document.cookie can reach. A genuinely third-party cookie (the
+  // copy of Meta's `fr` held on facebook.com) is beyond it; `fr` is listed
+  // only to clear a first-party copy where one exists.
+  const deleteTrackingCookies = useCallback(
+    (prefs?: CookiePreferences) => {
+      const deleteAnalytics = !prefs || !prefs.analytics
+      const deleteMarketing = !prefs || !prefs.marketing
+
+      // Static cookie names per category (analytics: GA4 + Microsoft
+      // Clarity; marketing: Meta Pixel)
+      expireCookies([
+        ...(deleteAnalytics ? ['_ga', '_gid', '_clck', '_clsk'] : []),
+        ...(deleteMarketing ? ['_fbp', 'fr'] : []),
+      ])
+
+      // Dynamically delete all cookies matching _ga_* (e.g., _ga_G-XXXXXXXXXX)
+      if (deleteAnalytics && typeof document !== 'undefined') {
+        const dynamicNames = document.cookie
+          .split(';')
+          .map((cookie) => cookie.split('=')[0].trim())
+          .filter((cookieName) => cookieName.startsWith('_ga_'))
+        expireCookies(dynamicNames)
+      }
+    },
+    [expireCookies]
+  )
+
   const applyConsent = useCallback(
-    (prefs: CookiePreferences, previousPrefs?: CookiePreferences) => {
+    (prefs: CookiePreferences) => {
       // Set a cookie to indicate consent status with Secure flag (only on HTTPS)
       const cookieValue = JSON.stringify(prefs)
       const secureFlag =
         typeof window !== 'undefined' && window.location.protocol === 'https:' ? '; Secure' : ''
       document.cookie = `cookie-consent=${encodeURIComponent(cookieValue)}; path=/; max-age=31536000; SameSite=Lax${secureFlag}`
 
-      // Check if consent was withdrawn and delete cookies if needed
-      if (previousPrefs) {
-        if (
-          (previousPrefs.analytics && !prefs.analytics) ||
-          (previousPrefs.marketing && !prefs.marketing)
-        ) {
-          deleteAnalyticsCookies()
-        }
+      // Delete each non-granted category's cookies on EVERY apply — not only on
+      // withdrawal of a stored grant, because cookies set under this site's
+      // earlier permissive default outlive that default.
+      if (!prefs.analytics || !prefs.marketing) {
+        deleteTrackingCookies(prefs)
       }
 
-      // Signal consent to Google Consent Mode v2 (tags in the GTM container
-      // gate on this) and push a custom event for any dataLayer-based triggers.
+      // Push the Google Consent Mode `update` mirroring this choice (tags in
+      // the GTM container gate on this). This is what lifts the
+      // denied-by-default state to granted for any visitor who accepts; for one
+      // who declines it pins storage to denied and GA4 stays on cookieless
+      // pings. Then push a custom event for any dataLayer-based triggers.
       if (typeof window !== 'undefined') {
         window.dataLayer = window.dataLayer || []
-        window.gtag?.('consent', 'update', {
-          analytics_storage: prefs.analytics ? 'granted' : 'denied',
-          ad_storage: prefs.marketing ? 'granted' : 'denied',
-          ad_user_data: prefs.marketing ? 'granted' : 'denied',
-          ad_personalization: prefs.marketing ? 'granted' : 'denied',
-        })
+        updateGoogleConsent(prefs)
         window.dataLayer.push({
           event: 'consent_update',
           functional_consent: prefs.functional ? 'granted' : 'denied',
@@ -105,7 +147,7 @@ export default function CookieConsent() {
         })
       }
     },
-    [deleteAnalyticsCookies]
+    [deleteTrackingCookies]
   )
 
   // Helper to load preferences from localStorage and update state
@@ -225,7 +267,7 @@ export default function CookieConsent() {
       // If localStorage is unavailable, continue anyway
       console.warn('Unable to save preferences to localStorage:', e)
     }
-    applyConsent(allAccepted, savedPreferencesBackup)
+    applyConsent(allAccepted)
     setSavedPreferencesBackup(allAccepted)
     setShowBanner(false)
   }
@@ -245,10 +287,7 @@ export default function CookieConsent() {
       console.warn('Unable to save preferences to localStorage:', e)
     }
 
-    // Delete third-party cookies when consent is withdrawn
-    deleteAnalyticsCookies()
-
-    applyConsent(onlyNecessary, savedPreferencesBackup)
+    applyConsent(onlyNecessary)
     setSavedPreferencesBackup(onlyNecessary)
     setShowBanner(false)
   }
@@ -260,7 +299,7 @@ export default function CookieConsent() {
       // If localStorage is unavailable, continue anyway
       console.warn('Unable to save preferences to localStorage:', e)
     }
-    applyConsent(preferences, savedPreferencesBackup)
+    applyConsent(preferences)
     setSavedPreferencesBackup(preferences)
     setShowBanner(false)
     setShowPreferences(false)

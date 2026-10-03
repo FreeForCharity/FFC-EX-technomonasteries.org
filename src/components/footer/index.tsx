@@ -95,6 +95,17 @@ const Footer: React.FC = () => {
         <Link href="/terms-of-service" className="footer-legal-link" style={linkTap}>
           Terms of Service
         </Link>
+        {/* Persistent consent re-entry point (withdrawing consent must
+            stay as easy as giving it): reopens the preferences modal
+            the cookie-consent banner registers on window. */}
+        <button
+          type="button"
+          onClick={() => window.openCookiePreferences?.()}
+          className="footer-legal-link"
+          style={{ ...linkTap, background: 'none', border: 'none', cursor: 'pointer' }}
+        >
+          Cookie Preferences
+        </button>
       </nav>
 
       {/* Copyright & affiliation */}

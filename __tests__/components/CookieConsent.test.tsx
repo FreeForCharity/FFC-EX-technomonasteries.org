@@ -100,3 +100,36 @@ describe('CookieConsent component', () => {
     )
   })
 })
+
+describe('CookieConsent cookie deletion on apply', () => {
+  // Own the shared state rather than inheriting whatever ran before: the
+  // localStorage mock and document.cookie both persist across tests in this
+  // file, so without this the suite passes or fails depending on order.
+  beforeEach(() => {
+    localStorageMock.clear()
+    for (const name of ['_ga', '_gid', '_fbp', 'fr', '_clck', '_clsk']) {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    }
+  })
+
+  it('deletes non-granted categories\u2019 cookies on load, even without a prior stored grant', async () => {
+    // Cookies can predate any stored choice: this site granted storage outside
+    // the EEA/UK/CH until recently, so a returning visitor may still carry a
+    // `_ga` set under that permissive default. Applying a denying choice must
+    // therefore delete per category on every apply, not only on withdrawal of a
+    // previously stored grant.
+    document.cookie = '_ga=stale-permissive-default'
+    document.cookie = '_fbp=stale-permissive-default'
+    localStorageMock.setItem(
+      'cookie-consent',
+      JSON.stringify({ necessary: true, functional: true, analytics: false, marketing: false })
+    )
+
+    render(<CookieConsent />)
+
+    await waitFor(() => {
+      expect(document.cookie).not.toContain('_ga=')
+      expect(document.cookie).not.toContain('_fbp=')
+    })
+  })
+})
